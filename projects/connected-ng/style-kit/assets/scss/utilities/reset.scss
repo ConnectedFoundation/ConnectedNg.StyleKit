@@ -1,0 +1,257 @@
+:root {
+  interpolate-size: allow-keywords;
+}
+
+/* Box sizing rules */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Semantic Elements*/
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  //min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: $base-font-size; 
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+
+a:hover {
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Screen readers only */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+
+/*scrollbar*/
+::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+}
+ 
+::-webkit-scrollbar-track {
+  //box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  margin-block: .25rem;
+  border-radius: .25rem;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: rgba(121, 121, 121, 0.4);
+  outline: 1px solid inherit;
+  border-radius: .25rem;
+}
+
+::-webkit-scrollbar-corner{
+   background-color: transparent;
+   color: transparent;
+}
+
+// @supports (scrollbar-color black white) {
+//    * {
+//       scrollbar-color: light-dark(rgba(121, 121, 121, 0.4), transparent);
+//       scrollbar-width:thin;
+//    }
+// }
+/*end scrollbar*/
+
+
+.collapse .collapse-item{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.collapse .collapse-cta tp-glyph svg {
+   transform: rotate(0);
+   transition: all 0.3s ease-in;
+}
+
+.collapse.show .collapse-cta tp-glyph svg {
+   transform: rotate(180deg);
+}
+
+.collapse .collapsed-group{
+   display: grid;
+   grid-template-rows: 0fr;
+   padding-top: 0!important;
+   padding-bottom: 0!important;
+   border-top: 0px solid transparent;
+   transition: all 0.3s ease-out;
+}
+
+.collapse.show .collapsed-group {
+   grid-template-rows: 1fr;
+   padding-top: initial;
+   padding-bottom: initial;
+   //border-top: 1px solid rgba(0,0,0,.15);
+   transition: all 0.3s ease-in;
+} 
+
+.collapsed-group .collapsed-content{
+   overflow-y: hidden;
+}
+
+/*collapse width interpolate-size*/
+// @supports (interpolate-size: allow-keywords) {
+//    .collapse .collapsed-group{
+//       height: 0;
+//       overflow-y: clip;
+//       transition: height 0.3s ease-out;
+//    }
+//    .collapse.show .collapsed-group {
+//       height: fit-content;
+//    }
+
+//    .collapsed-group .collapsed-content{
+//       overflow-y: initial!important;
+//       overflow: initial!important;
+//    }
+// }
+/*end collapse width interpolate-size*/
+
+/* Stretched link */
+
+
+.stretched-link {
+   position: initial !important;
+   &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      pointer-events: auto;
+      content: "";
+      background-color: rgba(0, 0, 0, 0);
+   }
+}
+
+.auto-grid{   
+  /* User input values */
+  --grid-layout-gap: 1rem;
+  --grid-column-count: var(--columns);
+  --grid-item--min-width: min(284px, 100%);
+
+
+  /*Calculated values*/
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+   grid-gap: var(--grid-layout-gap);
+   row-gap: 1.25rem;
+}
+
+/*alternative test*/
+.grid {
+  --grid-max-col-count: var(--columns);
+  --grid-min-col-size: 200px;
+  --grid-gap: 1rem;
+
+  /* calculations, do not touch */
+  --grid-col-size-calc: calc(
+    (100% - var(--grid-gap) * var(--grid-max-col-count)) /
+      var(--grid-max-col-count)
+  );
+  --grid-col-min-size-calc: min(
+    100%,
+    max(var(--grid-min-col-size), var(--grid-col-size-calc))
+  );
+
+  display: grid;
+  gap: var(--grid-gap);
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--grid-col-min-size-calc), 1fr)
+  );
+}
+

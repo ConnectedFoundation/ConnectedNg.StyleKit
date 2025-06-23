@@ -1,7 +1,471 @@
-.background-red {
-    background: red;
-} 
+@use '@angular/material' as mat;
+@use "sass:math";
+@import './variables.scss';
+@import './reset.scss';
+@import './functions.scss';
+@import './breakpoints.scss';
+@import './typography.scss';
+@import './mat-overides.scss';
+@import './common.scss';
 
-.background-blue {
-    background: blue;
-} 
+
+
+/*UTILITIES*/
+//text & bg colors in theme palllete
+@each $key, $val in $theme-colors {
+	.text-#{$key} {
+	  color: $val !important;
+	}
+	a.text-#{$key} {
+	  &:hover {
+		color: darken($val, 10%) !important;
+	  }
+	}
+	.text-hover-#{$key} {
+	  &:hover {
+		color: darken($val, 5%) !important;
+	  }
+	}
+	.b-c-#{$key} {
+	  border-color: $val !important;
+	}
+	.bg-#{$key} {
+	  background-color: $val !important;
+	  color: set-color($val);
+	}
+	.bg-hover-#{$key} {
+	  &:hover {
+		background-color: darken($val, 10%) !important;
+	  }
+	}   
+  }
+  .text-inherit{
+	 color: inherit!important;
+  }
+  
+  //using map from breakpoint.scss
+  @each $breakName, $breakValue in $breakpoints-up {
+	//padding margins classes
+	$spacings: (0, 1, 2, 3, 4, 5, auto);
+  
+	$sides: (
+	  "t": "top",
+	  "b": "bottom",
+	  "l": "left",
+	  "r": "right",
+	  "": (
+		"top",
+		"left",
+		"bottom",
+		"right",
+	  ),
+	  "x": (
+		"left",
+		"right",
+	  ),
+	  "y": (
+		"top",
+		"bottom",
+	  ),
+	);
+  
+	@each $space in $spacings {
+	  @each $prefix, $positions in $sides {
+		@if $breakName != "" {
+		  $prefix: #{$prefix}-#{$breakName};
+		} @else {
+		  $prefix: #{$prefix};
+		}
+  
+		@if $breakName != "" {
+		  @media (min-width: $breakValue) {
+			.p#{$prefix}-#{$space} {
+			  @each $pos in $positions {
+				padding-#{$pos}: if(
+				  $space == auto,
+				  $space,
+				  #{$space * $base-spacing}rem
+				) !important;
+			  }
+			}
+			.m#{$prefix}-#{$space} {
+			  @each $pos in $positions {
+				margin-#{$pos}: if(
+				  $space == auto,
+				  $space,
+				  #{$space * $base-spacing}rem
+				) !important;
+			  }
+			}
+			.b#{$prefix}-#{$space} {
+			  @each $pos in $positions {
+				border-#{$pos}: if(
+				  $space == auto,
+				  $space,
+				  #{$space}px solid var(--border-color-lc)
+				);
+			  }
+			}
+		  }
+		} @else {
+		  .p#{$prefix}-#{$space} {
+			@each $pos in $positions {
+			  padding-#{$pos}: if(
+				$space == auto,
+				$space,
+				#{$space * $base-spacing}rem
+			  ) !important;
+			}
+		  }
+		  .m#{$prefix}-#{$space} {
+			@each $pos in $positions {
+			  margin-#{$pos}: if(
+				$space == auto,
+				$space,
+				#{$space * $base-spacing}rem
+			  ) !important;
+			}
+		  }
+		  .b#{$prefix}-#{$space} {
+			@each $pos in $positions {
+			  border-#{$pos}: if(
+				$space == auto,
+				$space,
+				#{$space}px solid var(--border-color-lc)
+			  );
+			}
+		  }
+		}
+	  }
+	}
+  
+	//border-radius classes
+	$spacings: (0, 1, 2, 3, 4, 5);
+  
+	@each $space in $spacings {
+	  @if $breakName != "" {
+		@media (min-width: $breakValue) {
+		  .b-r-#{$breakName}-#{$space} {
+			border-radius: #{$space * $base-spacing}rem !important;
+		  }
+		}
+	  } @else {
+		.b-r-#{$space} {
+		  border-radius: #{$space * $base-spacing}rem !important;
+		}
+	  }
+	}
+  
+	//border-radius-circle
+	@if $breakName != "" {
+	  @media (min-width: $breakValue) {
+		.b-r-#{$breakName}-circle {
+		  border-radius: 50% !important;
+		}
+	  }
+	} @else {
+	  .b-r-circle {
+		border-radius: 50% !important;
+	  }
+	  .b-r-pill {
+		border-radius: 9999px !important;
+	  }
+	}
+  
+	//gap classes
+	$spacings: (0, 1, 2, 3, 4, 5);
+  
+	@each $space in $spacings {
+	  @if $breakName != "" {
+		@media (min-width: $breakValue) {
+		  .gap-#{$breakName}-#{$space} {
+			gap: #{$space * $base-spacing}rem !important;
+		  }
+		  .gap-x-#{$breakName}-#{$space} {
+			column-gap: #{$space * $base-spacing}rem !important;
+		  }
+		  .gap-y-#{$breakName}-#{$space} {
+			row-gap: #{$space * $base-spacing}rem !important;
+		  }
+		}
+	  } @else {
+		.gap-#{$space} {
+		  gap: #{$space * $base-spacing}rem !important;
+		}
+		.gap-x-#{$space} {
+		  column-gap: #{$space * $base-spacing}rem !important;
+		}
+		.gap-y-#{$space} {
+		  row-gap: #{$space * $base-spacing}rem !important;
+		}
+	  }
+	}
+  
+  
+	//Position classes
+	$positionProps: (
+	  "absolute",
+	  "fixed",
+	  "inherit",
+	  "initial",
+	  "relative",
+	  "revert",
+	  "static",
+	  "sticky",
+	  "unset",
+	);
+  
+	@each $pos in $positionProps {
+	  @if $breakName != "" {
+		@media (min-width: $breakValue) {
+		  .position-#{$breakName}-#{$pos} {
+			position: #{$pos} !important;
+		  }
+		}
+	  } @else {
+		.position-#{$pos} {
+		  position: #{$pos} !important;
+		}
+	  }
+	}
+  
+  
+	//Display classes
+	$displayProps: (
+	  "block",
+	  "inline-block",
+	  "inline",
+	  "flex",
+	  "grid",
+	  "inline-flex",
+	  "inline-grid",
+	  "table",
+	  "inline-table",
+	  "list-item",
+	  "none",
+	  "contents"
+	);
+  
+	@each $disp in $displayProps {
+	  @if $breakName != "" {
+		@media (min-width: $breakValue) {
+		  .d-#{$breakName}-#{$disp} {
+			display: #{$disp} !important;
+		  }
+		}
+	  } @else {
+		.d-#{$disp} {
+		  display: #{$disp} !important;
+		}
+	  }
+	}
+  
+	//Align & Justify classes
+	$alignments: (
+	  "center",
+	  "space-between",
+	  "space-around",
+	  "space-evenly",
+	  "flex-start",
+	  "flex-end"
+	);
+  
+	@each $align in $alignments {
+	  @if $breakName != "" {
+		@media (min-width: $breakValue) {
+		  .justify-#{$breakName}-#{$align} {
+			justify-content: #{$align};
+		  }
+  
+		  .items-#{$breakName}-#{$align} {
+			align-items: #{$align};
+		  }
+  
+		  .justify-items-#{$breakName}-#{$align} {
+			justify-items: #{$align};
+		  }
+  
+		  .content-#{$breakName}-#{$align} {
+			align-content: #{$align};
+		  }
+		}
+	  } @else {
+		.justify-#{$align} {
+		  justify-content: #{$align}!important;
+		}
+  
+		.items-#{$align} {
+		  align-items: #{$align};
+		}
+  
+		.justify-items-#{$align} {
+		  justify-items: #{$align};
+		}
+  
+		.content-#{$align} {
+		  align-content: #{$align};
+		}
+	  }
+	}
+  
+	//Text Align classes
+	$textAlignments: ("left", "right", "center", "justify");
+  
+	@each $textAlign in $textAlignments {
+	  @if $breakName != "" {
+		@media (min-width: $breakValue) {
+		  .text-#{$breakName}-#{$textAlign} {
+			text-align: #{$textAlign} !important;
+		  }
+		}
+	  } @else {
+		.text-#{$textAlign} {
+		  text-align: #{$textAlign} !important;
+		}
+	  }
+	}
+  
+	//Opacity classes
+	$opacities: ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+  
+	@each $opacity in $opacities {
+	  @if $breakName != "" {
+		@media (min-width: $breakValue) {
+		  .o-#{$breakName}-#{$opacity} {
+			opacity: calc(#{$opacity} / 10);
+		  }
+		}
+	  } @else {
+		.o-#{$opacity} {
+		  opacity: calc(#{$opacity} / 10);
+		}
+	  }
+	}
+  } //end breakpoints
+  
+  .flex-wrap {
+	flex-wrap: wrap;
+  }
+  
+  
+  /*ANIMATIONS*/
+  
+  /*ROTATE*/
+  @keyframes rotateCW {
+	 0% {
+		transform: rotate(0deg) ;
+	 }
+	 100% {
+		transform: rotate(180deg);
+	 }
+  }
+  
+  @keyframes rotateCCW {
+	 0% {
+		transform: rotate(180deg);
+	 }
+	 100% {
+		transform: rotate(0deg);
+	 }
+  }
+  /*END ROTATE*/
+  
+  /*COLLAPSE SHOW*/
+  @keyframes collapseShow {
+	 0% {
+		grid-template-rows: 0fr; ;
+	 }
+	 100% {
+		grid-template-rows: 1fr;;
+	 }
+  }
+  
+  @keyframes collapseHide {
+	 0% {
+		grid-template-rows: 1fr;;
+	 }
+	 100% {
+	   grid-template-rows: 0fr;;
+	 }
+  }
+  /*END COLLAPSE SHOW*/
+  
+  /*SELECT/ACTIVE*/
+  @keyframes activeHide {
+	 0% {
+		scale: 1 1;
+	 }
+	 100% {
+		scale: 0 1;
+	 }
+  }
+  
+  @keyframes activeShow {
+	 0% {
+		scale: 0 1;
+	 }
+  
+	 100% {
+		scale: 1 1;
+	 }
+  }
+  
+  /*SLIDE in/out FROM RIGHT*/
+  @keyframes slideinRight {
+	 0% {
+		transform: translateX(110%)
+	 }
+	 100% {
+		transform: translateX(0%)
+	 }
+  }
+  
+  @keyframes slideoutRight {
+	 0% {
+		transform: translateX(0%)
+	 }
+	 100% {
+		transform: translateX(110%)
+	 }
+  }
+  
+  /*END SELECT/ACTIVE*/
+  
+  .blink{
+	 animation: blink 2s linear infinite;
+  }
+  // @keyframes blink {
+  //    25%{
+  //       opacity: .5;
+  //    }
+  //    50%{
+  //       opacity: 0;
+  //    }
+  //    75%{
+  //       opacity: .5;
+  //    }
+  // }
+  
+  @keyframes blink {
+	 0% {
+		opacity: 0.5;
+		transform: translateX(100%);
+	 }
+	 25% {
+		opacity: .75;
+		transform: translateX(0);
+	 }
+	 50% {
+		opacity: 0.5;
+		transform: translateX(-100%);
+	 }
+	 75% {
+		opacity: .75;
+		transform: translateX(0);
+	 }
+	 100% {
+		opacity: 0.5;
+		transform: translateX(100%);
+	 }   
+  }
+/*END UTILITIES*/

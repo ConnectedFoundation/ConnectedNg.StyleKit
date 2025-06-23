@@ -1,0 +1,91 @@
+
+/*VAR*/
+$h:257;//257
+
+$primary-color:hsl($h, 31%, 69%) !default;
+//$primary-color:hsl(223, 51%, 80%); 
+$secondary-color: rgba(250, 250, 250, 1);
+
+//neutral-colors
+$element-bg-core: rgba(255, 255, 255, 0.25); // elements-background
+$element-fg-core : rgba(255, 255, 255, 0.5); // elements-foreground
+
+//info colors
+$blue: #0dbcf0c4;
+$red: #ff7f78;
+$yellow: #ffb480;
+$green: #80d89e;
+$cyan: #729fe9;
+$secondary: #ced4da;
+$light: rgba(255,255,255,.5);
+$dark: rgba(35,35,35,.5);
+$vibrant1:  #bf64e6;
+$vibrant2:  #e59191; 
+
+//color palette
+$theme-colors: (
+  "primary": $primary-color,
+  "secondary": $secondary,
+  "success": $green,
+  "info": $blue,
+  "warning": $yellow,
+  "danger": $red,
+  "light": $light,
+  "dark": $dark, 
+);
+
+//font-colors 
+$text-core-hc: #212121; //title
+$text-core: #525252; //text
+$text-core-lc: #7d7d80; //metadata
+$text-core-vc: #969699; //ikona-text
+
+//spacing
+$base-spacing: 0.25;
+$base-padding: #{$base-spacing}rem;
+$base-margin: #{$base-spacing}rem;
+
+//font-sizes
+$base-font-size: 1em !default;
+$font-size-sm: $base-font-size * 0.85 !default;
+$font-size-md: $base-font-size * 1.25 !default;
+$font-size-lg: $base-font-size * 1.5 !default;
+$font-size-xl: $base-font-size * 2 !default;
+
+$h1-size: $base-font-size * 3 !default;
+$h2-size: $base-font-size * 2.5 !default;
+$h3-size: $base-font-size * 2 !default;
+$h4-size: $base-font-size * 1.5 !default;
+$h5-size: $base-font-size * 1.25 !default;
+$h6-size: $base-font-size !default;
+
+//font-weight
+$font-weight-300: 300; //light
+$font-weight-400: normal; // regular
+$font-weight-600: 600; // semibold
+$font-weight-700: bold; // bold
+$font-weight-800: 800; // extra bold
+
+//border-radius
+$base-border-radius: 0.3rem;
+$border-radius-sm: math.div($base-border-radius, 2);
+$border-radius-lg: $base-border-radius * 2;
+$border-radius-pill: 100vw;
+
+// box-shadow
+$base-box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 10%) !default;
+
+// transition
+$transition: all 0.3s ease-in-out;
+
+//z-index
+$tooltip-zindex:896;
+$appbar-zindex: 897;
+$sitenav-zindex: 899;
+$sitenav-right-zindex: 898;
+$backdrop-zindex: 999;
+$dropdown-zindex: 10000; 
+$modal-zindex: 10000; 
+$notification-zindex: 10001; 
+$top-loading-bar-zindex: 10002; 
+/*END VAR*/
