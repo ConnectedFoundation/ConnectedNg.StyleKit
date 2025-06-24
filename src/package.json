@@ -1,6 +1,6 @@
 {
-  "name": "connected-ng.style-kit",
-  "version": "25.1.623-develop24623",
+  "name": "@connected-ng/style-kit",
+  "version": "25.1.623-develop25338",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,7 @@
     "test": "ng test",
     "prepare": "bash ../tools/version.sh"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^19.0.0",
     "@angular/cdk": "~19.2.9",

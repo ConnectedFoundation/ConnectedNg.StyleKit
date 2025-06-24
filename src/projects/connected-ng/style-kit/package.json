@@ -15,8 +15,5 @@
     "./utilities": {
       "sass": "./assets/scss/utilities/utilities.scss"
     }
-  },
-  "scripts": {
-    "prepare": "bash ../../../../tools/version.sh"
   }
 }
