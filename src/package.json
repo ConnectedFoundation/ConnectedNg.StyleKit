@@ -1,6 +1,6 @@
 {
   "name": "@connected-ng/style-kit",
-  "version": "25.1.623-develop25338",
+  "version": "25.1.624-develop13268",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
