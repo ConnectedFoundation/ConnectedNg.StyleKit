@@ -6,6 +6,14 @@ source "$(dirname "$0")/version.sh"
 if [[ "$branch" == "main" || "$branch" == "master" ]]; then
     npm publish --access=public
 else
-    npm publish --tag $branch --access=public
+    npm publish --tag $branch --access=public    
 fi
+
+version=$(npm pkg get version | tr -d "\"")
+git add **package.json
+git add **package-lock.json
+git commit -m "vrs: increment version to \"$version\""
+git tag -a $version -m "vrs: publish package \"$version\""
+git push
+git push origin tag $version
 
