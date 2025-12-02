@@ -14,6 +14,9 @@
   "exports": {
     "./utilities": {
       "sass": "./assets/scss/utilities/utilities.scss"
+    },
+    "./themes/connected": {
+      "sass": "./assets/scss/themes/connected/connected-theme.scss"
     }
   }
 }
