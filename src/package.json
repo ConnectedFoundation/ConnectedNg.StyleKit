@@ -1,6 +1,6 @@
 {
   "name": "@connected-ng/style-kit",
-  "version": "25.2.1202-develop26190",
+  "version": "25.2.1203-develop14677",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,14 +10,14 @@
     "prepare": "bash ../tools/version.sh"
   },
   "private": false,
-  "dependencies": {
+  "peerDependencies": {
     "@angular/animations": "^21.0.2",
-    "@angular/cdk": "~19.2.9",
+    "@angular/cdk": "^20.0.0",
     "@angular/common": "^21.0.2",
     "@angular/compiler": "^21.0.2",
     "@angular/core": "^21.0.2",
     "@angular/forms": "^21.0.2",
-    "@angular/material": "~19.2.9",
+    "@angular/material": "^20.0.0",
     "@angular/platform-browser": "^21.0.2",
     "@angular/platform-browser-dynamic": "^21.0.2",
     "@angular/router": "^21.0.2",

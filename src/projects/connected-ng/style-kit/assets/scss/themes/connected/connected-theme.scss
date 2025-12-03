@@ -26,12 +26,11 @@
     --bg-core-surface-2-hover: rgba(255, 255, 255, 0.2);
     --bg-core-surface-2-active: rgba(255, 255, 255, 0.4);
     --bg-core-surface-toolbar: rgba(255,255,255,.45);
-    --border-1: rgba(255,255,255,.3);
+    --border-1: rgba(255,255,255,.3); 
     --border-2: rgba(255,255,255,.1);
     --text-secondary: rgba(0,0,0,.55);
- }
- 
- 
+   }
+   
  @media (prefers-color-scheme: dark) {
      :root {
     color-scheme: dark;
@@ -56,7 +55,7 @@
      }
  }
 
-
+/*layout*/
  cf-main-layout {
     //background: linear-gradient(to left, var(--bg-core-primary), var(--bg-core-secondary));
     min-height: 100dvh;
@@ -236,18 +235,16 @@
     }
  }
  
- .mat-mdc-table {
-     background-color: transparent!important;
- }
- 
  .placeholder-container {
    padding: 1rem;
    border-radius: .5rem;
    background-color: var(--bg-core-surface-2);
    //backdrop-filter: blur(0.75rem);
    border: 1px solid rgba(0, 0, 0, 0.15);
- }
- 
+ } 
+/*end layout*/
+
+/*border-gradient*/
  .border-gradient, .main-wrapper {
     border: none!important;
   
@@ -270,12 +267,7 @@
      linear-gradient(black, black) padding-box;
    mask-composite: subtract;
  }
-
-
-
-
-
-
+/*end border-gradient*/
 
 //button 
 .cf-btn{
@@ -312,12 +304,39 @@
 //end button 
 
 
-  //table over copy to nglayouts
-  tr.element-row:not(.expanded-row):hover {
-    background: var(--bg-core-surface-2-hover, rgba(255, 255, 255, 0.03))!important;
-  }
-//end table over copy to nglayouts
+//table
+.mat-mdc-table {
+   background-color: transparent!important;
+}
 
+tr.element-row:not(.expanded-row):hover {
+   background: var(--bg-core-surface-2-hover, rgba(255, 255, 255, 0.03))!important;
+}
+//end table
+
+
+/*list-item*/
+mat-list-option[aria-selected="true"]{
+   background-color: var(--bg-core-surface-2-active)!important;
+}
+
+.list-item-border{
+   background-color:var(--bg-core-surface-2);
+   &::before {
+      content: "";
+      position: absolute;
+      z-index: 2; 
+      pointer-events: none;
+      inset: 0;
+      border-radius: inherit;
+      border: var(--border-width) solid transparent;
+      background: linear-gradient(var(--border-1), var(--border-2)) border-box;
+      mask: linear-gradient(black, black) border-box,
+            linear-gradient(black, black) padding-box;
+      mask-composite: subtract;
+    }
+}
+/*end list-item*/
 
 .connected-theme {
   @include mat.theme-overrides((
