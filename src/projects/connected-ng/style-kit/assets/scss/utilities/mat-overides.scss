@@ -1,48 +1,64 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 :host {
+  @include mat.table-overrides(
+    (
+      row-item-outline-color: var(--mat-sys-outline-variant),
+    )
+  );
 
-    @include mat.table-overrides((
-        row-item-outline-color: var(--mat-sys-outline-variant)
-    ));
-    
-    @include mat.expansion-overrides((
-        //header-indicator-color:var(--mat-sys-outline-variant),
-        actions-divider-color:var(--mat-sys-outline-variant),
-    ));
-    
-    @include mat.tabs-overrides((
-        active-ripple-color: transparent,
-        active-hover-label-text-color: var(--mat-sys-primary),
-        inactive-ripple-color: transparent,
-        inactive-hover-label-text-color: var(--mat-sys-primary),
-      ));
+  @include mat.expansion-overrides(
+    (
+      //header-indicator-color:var(--mat-sys-outline-variant),
+      actions-divider-color: var(--mat-sys-outline-variant)
+    )
+  );
 
-      @include mat.progress-bar-overrides((
-        active-indicator-height:2px,
-        track-height:2px,
-      ));
-    }
+  @include mat.tabs-overrides(
+    (
+      active-ripple-color: transparent,
+      active-hover-label-text-color: var(--mat-sys-primary),
+      inactive-ripple-color: transparent,
+      inactive-hover-label-text-color: var(--mat-sys-primary),
+    )
+  );
 
-    .warning .mat-badge-content{
-        @include mat.badge-overrides((
-            background-color: $yellow,
-        )); 
-    }
-    .success .mat-badge-content{
-        @include mat.badge-overrides((
-            background-color: $green,
-        ));
-    }
+  @include mat.progress-bar-overrides(
+    (
+      active-indicator-height: 2px,
+      track-height: 2px,
+    )
+  );
+  @include mat.paginator-overrides(
+    (
+      container-background-color: transparent,
+    )
+  );
+}
+
+.warning .mat-badge-content {
+  @include mat.badge-overrides(
+    (
+      background-color: $yellow,
+    )
+  );
+}
+.success .mat-badge-content {
+  @include mat.badge-overrides(
+    (
+      background-color: $green,
+    )
+  );
+}
 
 /*expansion panel colors*/
-.mat-expansion-panel:not([class*=mat-elevation-z]) {
-    box-shadow: 0 0 0px 1px var(--mat-sys-outline-variant)!important;
-    }
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 0 0px 1px var(--mat-sys-outline-variant) !important;
+}
 /*end expansion panel colors*/
 
 // /*expansion panel*/
-// .mat-accordion * .mat-expansion-panel:not(.mat-expanded), 
+// .mat-accordion * .mat-expansion-panel:not(.mat-expanded),
 // .mat-accordion * .mat-expansion-panel:not(.mat-expansion-panel-spacing) {
 //     border-radius: 0!important;
 // }
@@ -58,110 +74,96 @@
 // }
 
 .mat-accordion .mat-expansion-panel.mat-expanded {
-    margin: 16px 0!important;
+  margin: 16px 0 !important;
 }
 
 .mat-accordion .mat-expansion-panel:first-of-type.mat-expanded {
-    margin-top: 0!important;
+  margin-top: 0 !important;
 }
 
 .mat-accordion .mat-expansion-panel:last-of-type.mat-expanded {
-    margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 .mat-accordion .mat-action-row {
-    padding: 8px 8px 8px 24px;
+  padding: 8px 8px 8px 24px;
 }
 /*end expansion panel*/
 
 /*mat-themes colors*/
-.success{
-    @include mat.theme(
-        (
-            color:mat.$spring-green-palette,
-        )
-    );
+.success {
+  @include mat.theme(
+    (
+      color: mat.$spring-green-palette,
+    )
+  );
 }
 
-.danger{
-    @include mat.theme(
-        (
-        color:mat.$rose-palette,
-        )
-    );
+.danger {
+  @include mat.theme(
+    (
+      color: mat.$rose-palette,
+    )
+  );
 }
 
-.warning{
-    @include mat.theme(
-       (
-          color:mat.$orange-palette,
-       )
-   );
+.warning {
+  @include mat.theme(
+    (
+      color: mat.$orange-palette,
+    )
+  );
 }
 
-.info{
-    @include mat.theme(
-       (
-          color:mat.$blue-palette,
-       ) 
-   ); 
+.info {
+  @include mat.theme(
+    (
+      color: mat.$blue-palette,
+    )
+  );
 }
 /*end mat-themes-colors*/
 
 /*Material symbols */
 mat-icon {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 300,
-    'GRAD' 0,
-    'opsz' 24;
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
 
-    &.w-100 {
-        font-variation-settings:
-        'wght' 100,
-    }
-    &.w-200 {
-        font-variation-settings:
-        'wght' 200,
-    }
-    &.w-300 {
-        font-variation-settings:
-        'wght' 300,
-    }
-    &.w-400 {
-        font-variation-settings:
-        'wght' 400,
-    }
-    &.w-500 {
-        font-variation-settings:
-        'wght' 500,
-    }
-    &.w-600 {
-        font-variation-settings:
-        'wght' 600,
-    }
-    &.w-700 {
-        font-variation-settings:
-        'wght' 700,
-    }
-    &.fill {
-        font-variation-settings:
-        'FILL' 1,
-    }
-    &.lg {
-        font-size: 48px;
-        width: 48px!important;
-        height: 48px!important;
-        font-variation-settings:
-        'opsz' 48
-    }
-    &.sm {
-        font-size: 18px;
-        width: 18px!important;
-        height: 18px!important;
-        font-variation-settings:
-        'opsz' 18
-    }
+  &.w-100 {
+    font-variation-settings: "wght" 100;
+  }
+  &.w-200 {
+    font-variation-settings: "wght" 200;
+  }
+  &.w-300 {
+    font-variation-settings: "wght" 300;
+  }
+  &.w-400 {
+    font-variation-settings: "wght" 400;
+  }
+  &.w-500 {
+    font-variation-settings: "wght" 500;
+  }
+  &.w-600 {
+    font-variation-settings: "wght" 600;
+  }
+  &.w-700 {
+    font-variation-settings: "wght" 700;
+  }
+  &.fill {
+    font-variation-settings: "FILL" 1;
+  }
+  &.lg {
+    font-size: 48px;
+    width: 48px !important;
+    height: 48px !important;
+    //font-variation-settings: "opsz" 48;
+  }
+  &.sm {
+    font-size: 18px;
+    width: 18px !important;
+    height: 18px !important;
+    //font-variation-settings: "opsz" 18;
+  }
 }
 /*end Material symbols */
 

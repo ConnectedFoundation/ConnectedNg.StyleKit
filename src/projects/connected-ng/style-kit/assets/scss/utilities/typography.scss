@@ -1,0 +1,22 @@
+.text-wrap{
+    white-space: initial;
+}
+
+.anim-underline {
+    --currentColor: var(--mat-sys-on-surface);
+    --opacity: .5;
+    color: var(--currentColor);
+    text-decoration: none;
+    background-image: linear-gradient(to right,var(--currentColor) 50%,color-mix(in lab,transparent 75%,var(--currentColor)) 50%);
+    background-size: 200% 1px;
+    background-repeat: no-repeat;
+    background-position: 100% 97%;
+    white-space: pre;
+    transition: background-position .3s
+}
+
+.anim-underline:hover,.anim-underline:focus,.anim-underline:active,.anim-underline.active {
+    background-position: 0% 97%;
+    cursor: pointer;
+    transition: background-position .3s
+}

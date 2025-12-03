@@ -98,14 +98,14 @@
 
 .list-item-label {
   font-size: .75rem;
-  color: var(--mat-sys-outline);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
 .list-item-title {
   font-size: 14px;
   font-weight: 500;
-  line-height: 1;
+  //line-height: 1;
 }
 
 .list-item-value {
@@ -235,3 +235,22 @@ background: var(--mat-list-active-indicator-color, var(--mat-sys-secondary-conta
 /*end kpi*/
 
 /*END CUSTOM COMPONENTS*/
+
+/*SCROLL DRIVEN ANIMATION*/
+@keyframes animate-in {
+	0% { opacity: 0; transform: translateY(100%); }
+	100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes animate-out {
+	0% { opacity: 1; transform: translateY(0); }
+	100% { opacity: 0; transform: translateY(-100%);}
+}
+
+#fly-in-out .fly-in-out-item  {
+	animation: animate-in linear forwards,
+				animate-out linear forwards;
+	animation-timeline: view();
+	animation-range: entry, 75%;
+}
+/*END SCROLL DRIVEN ANIMATION*/
