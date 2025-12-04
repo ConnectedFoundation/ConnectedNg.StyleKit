@@ -1,6 +1,18 @@
 .text-wrap{
     white-space: initial;
 }
+  .text-sm{
+	 font-size: $font-size-sm!important;
+	// font-weight: $font-weight-300!important;
+	 line-height: 1.35!important;
+	 white-space: initial;
+  }
+
+  .text-truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
 .anim-underline {
     --currentColor: var(--mat-sys-on-surface);

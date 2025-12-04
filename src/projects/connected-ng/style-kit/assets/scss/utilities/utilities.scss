@@ -43,12 +43,7 @@
 	 color: inherit!important;
   }
   
-  .text-sm{
-	 font-size: $font-size-sm!important;
-	 font-weight: $font-weight-300!important;
-	 line-height: 1.35!important;
-	 white-space: initial;
-  }
+
 
   //using map from breakpoint.scss
   @each $breakName, $breakValue in $breakpoints-up {

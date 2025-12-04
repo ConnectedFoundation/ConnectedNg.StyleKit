@@ -34,6 +34,12 @@
       container-background-color: transparent,
     )
   );
+    @include mat.checkbox-overrides((
+    state-layer-size: 24px,
+  ));
+    @include mat.tree-overrides((
+    node-min-height: 24px,
+  ));
 }
 
 .warning .mat-badge-content {
@@ -89,6 +95,21 @@
   padding: 8px 8px 8px 24px;
 }
 /*end expansion panel*/
+
+/*check box*/
+.mdc-checkbox__background {
+    border: 1px solid currentColor!important;
+}
+/*end check box*/
+
+/*mat-drawer-end*/
+.mat-drawer-end.mat-drawer-over.mat-drawer-opened{
+    padding: 0!important;
+    & .mat-drawer-inner-container{
+        padding: 1rem!important;
+    }
+}
+/*end mat-drawer-end*/
 
 /*mat-themes colors*/
 .success {
