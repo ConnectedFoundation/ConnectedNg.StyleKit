@@ -343,7 +343,28 @@
 		}
 	  }
 	}
+
+	//Width classes
+	$sizes: ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+  
+	@each $size in $sizes {
+	  @if $breakName != "" {
+		@media (min-width: $breakValue) {
+		  .w-#{$breakName}-#{$size} {
+			width: calc(#{$size} * 10%);
+		  }
+		}
+	  } @else {
+		.w-#{$size} {
+		  width: calc(#{$size} * 10%);
+		}
+	  }
+	}
+
   } //end breakpoints
+  
+
+
   
   .flex-wrap {
 	flex-wrap: wrap;

@@ -3,7 +3,7 @@
 :root {
   @include mat.theme-overrides((
     secondary-container: light-dark(rgba(255, 255, 255, .15), rgba(255, 255, 255, 0.035)),
-    outline: light-dark(rgba(0, 0, 0, .1), rgba(255, 255, 255, .1)),
+    outline: light-dark(rgba(0, 0, 0, .2), rgba(255, 255, 255, .1)),
     outline-variant: light-dark(rgba(255, 255, 255, .15), rgba(255,255,255,.075)),
     //primary: light-dark(rgba(0,0,0,.5), rgba(255,255,255,.5))
     ));
@@ -341,6 +341,7 @@ mat-list-option[aria-selected="true"]{
       mask: linear-gradient(black, black) border-box,
             linear-gradient(black, black) padding-box;
       mask-composite: subtract;
+      backdrop-filter: saturate(1.5)!important;
     }
     &.bg-success{
       background-color: hsl(140, 53%, 67%, .5) !important;
