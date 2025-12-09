@@ -65,3 +65,9 @@ $breakpoints-down: (
    }
 }
 /*eTEST SIDENAV ON MOBILE*/
+
+.hide-on-mobile{
+  @include breakpoint-down('md'){
+	display: none!important;
+  }
+}

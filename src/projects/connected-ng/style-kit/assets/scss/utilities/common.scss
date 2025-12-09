@@ -100,13 +100,25 @@
 .list-item-label {
   font-size: .75rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.25;
+}
+
+.list-item-content {
+  font-size: .75rem;
+  line-height: 1.25;
+  font-weight: 500;
 }
 
 .list-item-title {
   font-size: 14px;
   font-weight: 500;
   //line-height: 1;
+}
+
+.list-item-date {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary);
 }
 
 .list-item-value {
