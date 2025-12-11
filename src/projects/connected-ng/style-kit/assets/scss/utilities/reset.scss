@@ -38,6 +38,13 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+@supports(scrollbar-gutter: stable){
+  html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+}
+
 /* Set core body defaults */
 body {
   //min-height: 100vh;

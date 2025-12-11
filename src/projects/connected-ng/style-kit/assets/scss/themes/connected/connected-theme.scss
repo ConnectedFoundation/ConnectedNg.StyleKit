@@ -1,15 +1,19 @@
 @use '@angular/material' as mat;
 
-:root {
-  @include mat.theme-overrides((
+:root{
+    @include mat.theme-overrides((
     secondary-container: light-dark(rgba(255, 255, 255, .15), rgba(255, 255, 255, 0.035)),
     outline: light-dark(rgba(0, 0, 0, .2), rgba(255, 255, 255, .1)),
     outline-variant: light-dark(rgba(255, 255, 255, .15), rgba(255,255,255,.075)),
     //primary: light-dark(rgba(0,0,0,.5), rgba(255,255,255,.5))
-    surface-container: light-dark(var(--bg-core-surface-2-hover), var(--bg-core-surface-2)),
-    surface-container-high: light-dark(var(--bg-core-surface-2-hover), var(--bg-core-surface-2)),
+    surface-container: light-dark(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05)),
+    surface-container-high: light-dark(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05)),
 
     ));
+}
+
+ .connected-theme {
+ 
  
     --bg-core-primary: rgb(165, 151, 200);
     --bg-core-primary-400: #bfb6d8;
@@ -36,7 +40,7 @@
    }
    
  @media (prefers-color-scheme: dark) {
-     :root {
+      .connected-theme  {
     color-scheme: dark;
        --bg-core-primary: rgb(165, 151, 200);
        --bg-core-primary-400: #bfb6d8;
@@ -66,7 +70,7 @@
 }
 
 /*layout*/
- cf-main-layout {
+ .connected-theme cf-main-layout {
     //background: linear-gradient(to left, var(--bg-core-primary), var(--bg-core-secondary));
     min-height: 100dvh;
     inset: 0 0 auto;
@@ -76,7 +80,7 @@
  }
  
  @supports (backdrop-filter:blur()) {
-    cf-main-layout {
+   .connected-theme cf-main-layout {
        min-height: 100dvh;
        inset: 0 0 auto;
        position: absolute;
@@ -97,11 +101,11 @@
        }
     }
  }
- .mat-drawer-container {
+ .connected-theme .mat-drawer-container {
    background-color: var(--bg-core-neutral-200)!important;
  } 
  
- .mat-drawer-container:before {
+ .connected-theme .mat-drawer-container:before {
      content: "";
      position: absolute;
      inset: 0;
@@ -110,16 +114,16 @@
      z-index: -1;
  }
  
- .mat-sidenav {
+ .connected-theme .mat-sidenav {
     //z-index: 2;
     isolation: isolate;
     background-color: transparent!important;
  }
  
- .mat-sidenav {
+ .connected-theme .mat-sidenav {
     //grid-column: 1 / 2;
     border-right: 1px solid rgba(0, 0, 0, .035)!important;
-    position: relative;
+    //position: relative;
     border-left: none!important;
     border-top-right-radius: 0!important;
      border-bottom-right-radius: 0!important;
@@ -157,13 +161,13 @@
     }
  }
  
- .mat-drawer-end {
+ .connected-theme .mat-drawer-end {
     border-top-left-radius: 0!important;
     border-bottom-left-radius: 0!important;
     background-color: transparent!important;
    // background-color: var(--bg-core-primary-400);
     border-left: 1px solid rgba(0, 0, 0, .05);
-    position: relative;
+    //position: relative;
     //z-index: 1;
  
     &:before,
@@ -201,8 +205,8 @@
     }
  }
  
- .main-layout-toolbar,
- .sticky-wrapper {
+ .connected-theme .main-layout-toolbar,
+ .connected-theme .sticky-wrapper {
     background-color: transparent!important;
     position: sticky;
     padding: .75rem 1rem!important;
@@ -246,7 +250,7 @@
     }
  }
  
- .placeholder-container {
+ .connected-theme .placeholder-container {
    padding: 1rem;
    border-radius: .5rem;
    background-color: var(--bg-core-surface-2);
@@ -256,23 +260,21 @@
 /*end layout*/
 
 /*border-gradient*/
- .border-gradient, .main-wrapper {
-    border: none!important;
-  
-   --border-width: 1px;
+ .connected-theme .border-gradient, .main-wrapper {
+   border: none!important;
    isolation: isolate;
    position: relative;
  }
  
- .border-gradient::before,
- .main-wrapper::before {
+ .connected-theme .border-gradient::before,
+ .connected-theme .main-wrapper::before {
    content: "";
    position: absolute;
    z-index: 2;
-       pointer-events: none;
+   pointer-events: none;
    inset: 0;
    border-radius: inherit;
-   border: var(--border-width) solid transparent;
+   border: 1px solid transparent;
    background: linear-gradient(var(--border-1), var(--border-2)) border-box;
    mask: linear-gradient(black, black) border-box,
      linear-gradient(black, black) padding-box;
@@ -298,7 +300,7 @@
      pointer-events: none;
      inset: 0;
      border-radius: inherit;
-     border: var(--border-width) solid transparent;
+     border: 1px solid transparent;
      background: linear-gradient(var(--border-1), var(--border-2)) border-box;
      mask: linear-gradient(black, black) border-box,
            linear-gradient(black, black) padding-box;
@@ -333,7 +335,7 @@ mat-list-option[aria-selected="true"]{
 }
 
 .list-item-border{
-   border: none!important;
+   border: none;
    background-color:var(--bg-core-surface-2)!important;
    &::after {
       content: "";
@@ -342,7 +344,7 @@ mat-list-option[aria-selected="true"]{
       pointer-events: none;
       inset: 0;
       border-radius: inherit;
-      border: var(--border-width) solid transparent;
+      border: 1px solid transparent;
       background: linear-gradient(var(--border-1), var(--border-2)) border-box;
       mask: linear-gradient(black, black) border-box,
             linear-gradient(black, black) padding-box;
@@ -352,6 +354,25 @@ mat-list-option[aria-selected="true"]{
     &.bg-success{
       background-color: hsl(140, 53%, 67%, .5) !important;
     }
+    &.bg-warning{
+      background-color: hsl(25, 100%, 75%, .5) !important;
+    }
+    &.bg-danger{
+      background-color: hsl(0, 100%, 75%, .5) !important;
+    }
+    &.b-c-success::after{
+      --border-1: hsl(140, 50%, 75%, .5) !important;
+      --border-2: hsl(140, 50%, 75%, .25) !important;
+    }
+    &.b-c-warning::after{
+      --border-1: hsl(25, 100%, 75%, .5) !important;
+      --border-2: hsl(25, 100%, 75%, .25) !important;
+    }    
+     &.b-c-danger::after{
+      --border-1: hsl(0, 100%, 75%, .5) !important;
+      --border-2: hsl(0, 100%, 75%, .25) !important;
+    }
+
 
 }
 /*end list-item*/
@@ -371,7 +392,7 @@ mat-list-option[aria-selected="true"]{
 /*end tabs*/
 
 /*bottom-sheet*/
-.mat-bottom-sheet-container {
+body:has(.connected-theme) .mat-bottom-sheet-container {
    background-color: var(--bg-core-surface-2-hover)!important;
    backdrop-filter: blur(0.5rem) url(#liquid-prism-intense)!important;
    border-top-left-radius: 1rem!important;
@@ -383,10 +404,27 @@ mat-list-option[aria-selected="true"]{
 /*drop-downs*/
 .mat-datepicker-content,
 .mat-mdc-select-panel,
-.mat-mdc-autocomplete-panel  {
+.mat-mdc-autocomplete-panel,
+.mat-mdc-menu-panel {
    backdrop-filter: blur(0.75rem) url(#liquid-prism-intense)!important;
 }
+
 /*end drop-downs*/
+
+/*stepper*/
+.connected-theme .mat-step-header[aria-selected="true"]{
+    background: var(--bg-core-surface-2)!important;
+}
+.connected-theme .mat-vertical-content {
+    background: var(--bg-core-surface-2);
+}
+.connected-theme  .stepper-action-bar{
+    background: var(--bg-core-surface-2-hover);
+}
+.stepper-action-bar{
+    background: var(--bg-core-surface-2-hover);
+}
+/*end stepper*/
 
 .connected-theme {
   @include mat.theme-overrides((

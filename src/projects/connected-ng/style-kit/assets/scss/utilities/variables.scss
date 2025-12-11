@@ -1,4 +1,11 @@
 
+:root {
+--text-secondary: light-dark(rgba(0,0,0,.65), rgba(255,255,255,.55))!important;
+--border-1: light-dark(rgba(0,0,0,.2), rgba(255,255,255,.075)); 
+--border-2: light-dark(rgba(0,0,0,.1), rgba(200,200,205,.05));
+}
+
+
 /*VAR*/
 $h:257;//257
 

@@ -1,3 +1,41 @@
+.main-layout-toolbar,
+.sticky-wrapper {
+    padding: .75rem 1rem!important;
+    top: 2rem;
+}
+
+ .placeholder-container {
+   padding: 1rem;
+   border-radius: .5rem;
+   background-color: var(--bg-core-surface-2);
+   //backdrop-filter: blur(0.75rem);
+   border: 1px solid var(--mat-sys-outline-variant);
+ } 
+/*end layout*/
+/*border-gradient*/
+ .border-gradient, .main-wrapper {
+   border: none!important;
+   isolation: isolate;
+   position: relative;
+ }
+ 
+.border-gradient::before,
+.main-wrapper::before {
+   content: "";
+   position: absolute;
+   z-index: 2;
+   pointer-events: none;
+   inset: 0;
+   border-radius: inherit;
+   border: 1px solid transparent;
+   background: linear-gradient(var(--border-1), var(--border-2)) border-box;
+   mask: linear-gradient(black, black) border-box,
+     linear-gradient(black, black) padding-box;
+   mask-composite: subtract;
+   backdrop-filter: saturate(1.5);
+ }
+/*end border-gradient*/
+
 .footer{
     display: flex;
     flex-wrap: wrap;
@@ -81,6 +119,8 @@
   margin-bottom: .75rem!important;
   padding: .75rem 1rem!important;
   height: auto!important;
+  position: relative;
+  //box-shadow: 0 .125rem .25rem #0000001a;
   & .mdc-list-item__primary-text{
       font-size: 14px!important;
       letter-spacing: normal!important;
@@ -100,12 +140,12 @@
 .list-item-label {
   font-size: .75rem;
   color: var(--text-secondary);
-  line-height: 1.25;
+  line-height: 1.35;
 }
 
 .list-item-content {
   font-size: .75rem;
-  line-height: 1.25;
+  line-height: 1.35;
   font-weight: 500;
 }
 
@@ -123,6 +163,18 @@
 
 .list-item-value {
   font-size: 14px!important;
+}
+
+.list-item-badge-text {
+    display: inline-block;
+    background-color: var(--bg-core-surface-2);
+    color: var(--mat-sys-on-surface);
+    font-size: .75rem;
+    font-weight: 300;
+    line-height: 1;
+    border-radius: .35rem;
+    padding: .35rem .5rem;
+    border: 1px solid var(--border-1);
 }
 
 .selection-indicator-hidden.mat-mdc-list-option .mdc-checkbox {

@@ -46,6 +46,9 @@
     container-color: transparent,
     header-height:48px,
   ));
+    @include mat.button-toggle-overrides((
+    height: 32px,
+  ));
 }
 
 .warning .mat-badge-content {
@@ -117,12 +120,12 @@
 /*vertical stepper*/
 
 .mat-step-header[aria-selected="true"]{
-    background: var(--bg-core-surface-2)!important;
+    background: var(--mat-sys-surface-container-low)!important;
     border-radius: var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) 0 0!important;
 }
 .mat-vertical-content {
     padding: 24px 48px!important;
-    background: var(--bg-core-surface-2);
+    background: var(--mat-sys-surface-container-low);
     border-radius: 0 0 var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium));
 }
 
@@ -157,7 +160,7 @@
             display: flex;
             flex-direction: column;
                 .mat-stepper-vertical, .mat-stepper-horizontal {
-                margin-bottom: 32px;
+                margin-bottom: 28px;
                 flex: 1 0 calc(100vh - 175px);
                 @include breakpoint-down('md'){
                     margin-bottom: 82px;
@@ -178,7 +181,7 @@
     right: 1rem;
     margin-top: auto;
     z-index: 1;
-    background: var(--bg-core-surface-2-hover);
+    background: var(--mat-sys-surface-container-low);
         &::before{
         content: "";
         border-radius: inherit;
@@ -193,7 +196,7 @@
         pointer-events: none;
         inset: 0;
         border-radius: inherit;
-        border: var(--border-width) solid transparent;
+        border: 1px solid transparent;
         background: linear-gradient(var(--border-1), var(--border-2)) border-box;
         mask: linear-gradient(black, black) border-box,
         linear-gradient(black, black) padding-box;
@@ -203,10 +206,10 @@
     }
 
 @media only screen and (max-width: 768px) {
-.mat-step-header[aria-selected="true"]{
-    background: var(--bg-core-surface-2)!important;
-    border-radius: var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) 0 0!important;
-}
+// .mat-step-header[aria-selected="true"]{
+//     background: var(--bg-core-surface-2)!important;
+//     border-radius: var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) 0 0!important;
+// }
 .mat-step-header[aria-selected="false"]{
     height: 0!important;
     overflow: hidden!important;
@@ -230,7 +233,7 @@
 }
 .mat-vertical-content {
     padding: 12px 12px !important;
-    background: var(--bg-core-surface-2);
+    //background: var(--bg-core-surface-2);
     border-radius: 0 0 var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium));
 }
 
@@ -245,7 +248,7 @@
     right: 1rem;
     margin: 1rem 0;
     z-index: 1;
-    background: var(--bg-core-surface-2-hover);
+   // background: var(--bg-core-surface-2-hover);
         &::before{
         content: "";
         border-radius: inherit;
