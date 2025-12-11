@@ -1,6 +1,6 @@
 {
   "name": "@connected-ng/style-kit",
-  "version": "25.2.1203-develop14677",
+  "version": "25.2.1211-develop16596",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -38,5 +38,8 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^21.0.0",
     "typescript": "~5.9.3"
+  },
+  "publishConfig": {
+    "directory": "dist/connected-ng/style-kit"
   }
 }
