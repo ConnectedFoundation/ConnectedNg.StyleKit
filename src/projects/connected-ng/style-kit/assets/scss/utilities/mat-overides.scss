@@ -276,7 +276,14 @@
 
 /*check box*/
 .mdc-checkbox__background {
-    border: 1px solid currentColor!important;
+    border: 1px solid var(--mat-sys-outline)!important;
+    .mdc-checkbox__checkmark {
+    top: 1px!important;
+    right: 0;
+    bottom: 0;
+    left: 1px!important;
+    width: 85%;
+  }
 }
 /*end check box*/
 

@@ -395,6 +395,7 @@ mat-list-option[aria-selected="true"]{
 
 /*bottom-sheet*/
 body:has(.connected-theme) .mat-bottom-sheet-container {
+   --bg-core-surface-2-hover: light-dark(rgba(255,255,255,.4),rgba(255, 255, 255, 0.1));
    background-color: var(--bg-core-surface-2-hover)!important;
    backdrop-filter: blur(0.5rem) url(#liquid-prism-intense)!important;
    border-top-left-radius: 1rem!important;
