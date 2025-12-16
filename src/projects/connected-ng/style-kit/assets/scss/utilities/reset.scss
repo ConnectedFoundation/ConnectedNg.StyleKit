@@ -264,6 +264,8 @@ collapse .collapse-cta mat-icon {
   );
 }
 
+
+
 @media only screen and (min-width: 769px) {
     .col-span-1 {
         grid-column:span 1
@@ -295,5 +297,11 @@ collapse .collapse-cta mat-icon {
 
     .row-span-4 {
         grid-row: span 4
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+   .col-span-1, .col-span-3 {
+        grid-column: 1 / -1
     }
 }
