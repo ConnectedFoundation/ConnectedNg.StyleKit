@@ -49,6 +49,9 @@
     @include mat.button-toggle-overrides((
     height: 32px,
   ));
+    @include mat.dialog-overrides((
+    container-max-width: 600px,
+  ));
 }
 
 .warning .mat-badge-content {
@@ -123,6 +126,11 @@
     background: var(--mat-sys-surface-container-low)!important;
     border-radius: var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium)) 0 0!important;
 }
+
+.mat-step-header[aria-selected="false"]{
+  pointer-events: none;
+}
+
 .mat-vertical-content {
     padding: 24px 48px!important;
     background: var(--mat-sys-surface-container-low);
