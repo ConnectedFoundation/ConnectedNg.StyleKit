@@ -165,8 +165,15 @@
   & .mdc-list-item__primary-text{
       font-size: 14px!important;
       letter-spacing: normal!important;
-
   }
+    &.merging-enabled{
+      outline: 2px dashed var(--mat-sys-outline);
+      outline-offset: 2px;
+    }
+      &.merging-enabled[aria-selected="true"]{
+      outline: 2px dashed var(--mat-sys-on-background);
+      outline-offset: 2px;
+    }
 }
 
 .list-item-avatar {
