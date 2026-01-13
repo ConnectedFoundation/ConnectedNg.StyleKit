@@ -434,13 +434,20 @@ body:has(.connected-theme) .mat-bottom-sheet-container {
 .mat-mdc-select-panel,
 .mat-mdc-autocomplete-panel,
 .mat-mdc-menu-panel {
-      --bg-core-surface-2-hover: light-dark(rgba(255,255,255,.4),rgba(255, 255, 255, 0.1));
-
+   --bg-core-surface-2-hover: light-dark(rgba(255,255,255,.4),rgba(255, 255, 255, 0.1));
    backdrop-filter: blur(0.75rem) url(#liquid-prism-intense)!important;
    background: var(--bg-core-surface-2-hover) !important;
 }
-
 /*end drop-downs*/
+
+/*dialog*/
+body:has(.connected-theme) .mat-mdc-dialog-surface {
+   --bg-core-surface-2-hover: light-dark(rgba(255,255,255,.6),rgba(255, 255, 255, 0.1));
+   background-color: var(--bg-core-surface-2-hover)!important;
+   backdrop-filter: blur(0.75rem) url(#liquid-prism-intense)!important;
+   border: 1px solid var(--border-1);
+}
+/*end dialog*/
 
 /*stepper*/
 .connected-theme .mat-step-header[aria-selected="true"]{
