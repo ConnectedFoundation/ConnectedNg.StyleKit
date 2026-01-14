@@ -409,5 +409,9 @@ fieldset:last-child, fieldset:only-child {
       right: 7px;
     }
   }
- 
 }
+
+.disabled{
+    pointer-events: none;
+    opacity: .65;
+  }
