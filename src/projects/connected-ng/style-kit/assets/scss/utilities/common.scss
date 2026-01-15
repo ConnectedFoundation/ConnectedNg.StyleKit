@@ -224,6 +224,9 @@
     border-radius: .35rem;
     padding: .35rem .5rem;
     border: 1px solid var(--border-1);
+    &:empty{
+      display: none;
+    }
 }
 
 .selection-indicator-hidden.mat-mdc-list-option .mdc-checkbox {
