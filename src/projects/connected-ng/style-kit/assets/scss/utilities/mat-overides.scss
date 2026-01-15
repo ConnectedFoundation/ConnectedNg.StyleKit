@@ -75,6 +75,20 @@
 }
 /*end tabs*/
 
+  /*snackbar*/
+.snack-danger.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  border-radius: .65rem!important;
+  background-color: #ff7f78!important;
+}
+.snack-warning.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  border-radius: .65rem!important;
+  background-color: #ffb480!important;
+}
+.snack-success.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  border-radius: .65rem!important;
+  background-color: #80d89e!important;
+}
+/*end snackbar*/
 
 /*expansion panel colors*/
 .mat-expansion-panel:not([class*="mat-elevation-z"]) {

@@ -11,6 +11,9 @@
    //backdrop-filter: blur(0.75rem);
    border: 1px solid var(--mat-sys-outline-variant);
  } 
+
+
+ 
 /*end layout*/
 /*border-gradient*/
  .border-gradient, .main-wrapper {
@@ -69,7 +72,7 @@
 }
 
 .fab-wrapper {
-    width: min(100% - clamp(1rem, 5%, 4rem), 1720px - 4rem);
+    width: min(100% - clamp(1rem, 5%, 4rem), 1920px - 4rem);
     margin-inline: auto;
     display: flex;
     justify-content: end;
