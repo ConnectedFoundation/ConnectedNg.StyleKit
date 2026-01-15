@@ -304,6 +304,12 @@
 }
 /*end mat-drawer-end*/
 
+/*list-item*/
+.mdc-list-item.mdc-list-item--disabled::before {
+    background-color: transparent !important;
+}
+/*end list-item*/
+
 /*mat-themes colors*/
 .success {
   @include mat.theme(
