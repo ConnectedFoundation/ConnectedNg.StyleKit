@@ -1,4 +1,6 @@
+@use "sass:math";
 @use '@angular/material' as mat;
+@import '../../utilities/variables.scss';
 
 :root{
     @include mat.theme-overrides((
@@ -385,6 +387,7 @@ mat-list-option[aria-selected="true"]{
     }
     &.bg-danger{
       background-color: light-dark(hsl(0, 100%, 75%, .35), hsl(0, 100%, 75%, .2)) !important;
+      //background-color: light-dark(oklch(from $red l c h / 50%), oklch(from $red l c h / 50%)) !important;
     }
     &.b-c-success::after{
       --border-1: hsl(140, 50%, 75%, .5) !important;
