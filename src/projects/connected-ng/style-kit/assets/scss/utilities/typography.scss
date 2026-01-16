@@ -9,7 +9,9 @@
 }
 
 
-.read-only {
+.read-only, 
+mat-form-field:has([readonly]),
+mat-form-field:has([readonly="true"]) {
     opacity: .6;
     pointer-events: none!important;
     cursor: default;
