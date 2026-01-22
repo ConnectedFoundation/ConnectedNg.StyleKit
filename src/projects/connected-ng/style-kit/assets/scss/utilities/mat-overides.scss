@@ -324,6 +324,18 @@
 }
 /*end list-item*/
 
+/*select*/
+.mat-mdc-optgroup-label {
+    font-weight: 400!important;
+    opacity: .65!important; 
+}
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple) {
+    background-color: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1))!important;
+
+}
+/*endselect*/
+
+
 /*mat-themes colors*/
 .success {
   @include mat.theme(
