@@ -359,6 +359,8 @@ background: var(--mat-list-active-indicator-color, var(--mat-sys-secondary-conta
 /*END CUSTOM COMPONENTS*/
 
 /*SCROLL DRIVEN ANIMATION*/
+@supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+
 @keyframes animate-in {
 	0% { opacity: 0; transform: translateY(100%); }
 	100% { opacity: 1; transform: translateY(0); }
@@ -374,6 +376,7 @@ background: var(--mat-list-active-indicator-color, var(--mat-sys-secondary-conta
 				animate-out linear forwards;
 	animation-timeline: view();
 	animation-range: entry, 83%;
+}
 }
 /*END SCROLL DRIVEN ANIMATION*/
 

@@ -28,7 +28,7 @@ $gap: 10px;
   }
 }
 // Defines media queries for each breakpoint and loops through both spans and offsets to set grid-column-end and grid-column-start
-@media (min-width: map-get($breakpoints-down, xl)) {
+@media (max-width: map-get($breakpoints-up, xl)) {
   @for $span from 1 through $grid-columns {
     .span-xl-#{$span} {
       grid-column-end: span $span;
@@ -40,7 +40,7 @@ $gap: 10px;
     }
   }
 }
-@media (min-width: map-get($breakpoints-down, lg)) {
+@media (max-width: map-get($breakpoints-up, lg)) {
   @for $span from 1 through $grid-columns {
     .span-lg-#{$span} {
       grid-column-end: span $span;
@@ -52,7 +52,7 @@ $gap: 10px;
     }
   }
 }
-@media (min-width: map-get($breakpoints-down, md)) {
+@media (max-width: map-get($breakpoints-up, md)) {
   @for $span from 1 through $grid-columns {
     .span-md-#{$span} {
       grid-column-end: span $span;
@@ -64,7 +64,7 @@ $gap: 10px;
     }
   }
 }
-@media (min-width: map-get($breakpoints-down, sm)) {
+@media (max-width: map-get($breakpoints-up, sm)) {
   @for $span from 1 through $grid-columns {
     .span-sm-#{$span} {
       grid-column-end: span $span;
