@@ -22,6 +22,14 @@ mat-form-field:has([readonly="true"]) {
     }
 } 
 
+.display-only{
+    pointer-events: none!important;
+        & .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mat-mdc-notch-piece {
+        border-color: transparent!important;
+        pointer-events: none!important;
+    }
+}
+
 .form-section{
     display: flex;
     flex-direction: column;
