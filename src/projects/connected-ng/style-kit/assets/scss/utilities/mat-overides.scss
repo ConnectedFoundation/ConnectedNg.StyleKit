@@ -49,6 +49,7 @@
     @include mat.button-toggle-overrides((
     height: 32px,
   ));
+
     @include mat.dialog-overrides((
     container-max-width: 600px,
   ));
@@ -68,6 +69,14 @@
     )
   );
 }
+
+/*inputs*/
+.mat-mdc-floating-label, .mat-mdc-form-field .mdc-floating-label, .mdc-floating-label, mat-label {
+    opacity: .75 !important;
+    -webkit-text-fill-color: currentColor;
+}
+/*end inputs*/
+
 
 /*tabs*/
 @media (max-width: 600px) {

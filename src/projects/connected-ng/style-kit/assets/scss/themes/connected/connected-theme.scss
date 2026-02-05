@@ -394,6 +394,11 @@
 }}
 //end button 
 
+//toggle button
+.mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+   background-color: var(--bg-core-surface-2-active)!important;
+}
+//end toggle button
 
 //table
 .mat-mdc-table {
