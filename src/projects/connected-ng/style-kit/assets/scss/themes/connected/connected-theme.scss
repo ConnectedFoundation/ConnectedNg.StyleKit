@@ -401,7 +401,7 @@
 //end toggle button
 
 //table
-.mat-mdc-table {
+.connected-theme .mat-mdc-table {
    background-color: transparent!important;
 }
 tr.element-row:not(.expanded-row):hover {
@@ -543,6 +543,43 @@ body:has(.connected-theme) .mat-mdc-dialog-surface {
     background: var(--bg-core-surface-2-hover);
 }
 /*end stepper*/
+
+/*table sticky column*/
+  .connected-theme th.mat-mdc-table-sticky-border-elem-left:first-of-type {
+    overflow: visible;
+    &:before,
+    &:after {
+       content: "";
+       inset: 0 0 -100rem 0;
+       //inset:  0 ;
+       position: absolute;
+       border-top-left-radius: .6rem;
+    }
+    &:before {
+       background: linear-gradient(to left, var(--bg-core-primary), var(--bg-core-secondary))!important;
+       background-repeat: no-repeat!important;
+       background-size: cover!important;
+       background-position: center!important;
+       background-attachment: fixed!important;
+       z-index: -2!important;
+ 
+       @supports (backdrop-filter:blur()) {
+          background: linear-gradient(to left, var(--bg-core-primary-a700), var(--bg-core-secondary-a700)), var(--bg-core-image)!important;
+          background-repeat: no-repeat!important;
+          background-size: cover!important;
+          background-position: center!important;
+          background-attachment: fixed!important;
+          z-index: -2!important;
+       }
+    }
+    &:after {
+       //background-color: var(--bg-core-neutral-200)!important;
+       background-color: var(--bg-core-surface-toolbar)!important;
+       z-index: -1!important;
+       backdrop-filter: blur(0.85rem)!important;
+    }
+ }
+ /*end table sticky column*/
 
 .connected-theme {
   @include mat.theme-overrides((
