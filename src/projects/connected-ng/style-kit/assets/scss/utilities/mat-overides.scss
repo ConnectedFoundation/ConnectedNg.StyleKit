@@ -331,6 +331,10 @@
 .mdc-list-item.mdc-list-item--disabled::before {
     background-color: transparent !important;
 }
+
+cf-navigation-list-item {
+    display: contents;
+}
 /*end list-item*/
 
 /*select*/
@@ -378,6 +382,11 @@
   );
 }
 /*end mat-themes-colors*/
+
+.mat-mdc-icon-button {
+    font-size: var(--mat-icon-button-icon-size, 16px)!important;
+}
+
 
 /*Material symbols */
 mat-icon {
