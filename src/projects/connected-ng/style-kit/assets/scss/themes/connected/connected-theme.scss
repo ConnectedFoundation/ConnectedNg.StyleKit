@@ -577,13 +577,14 @@ body:has(.connected-theme) .mat-mdc-dialog-surface {
 
    .connected-theme th.mat-mdc-table-sticky-border-elem-left:first-of-type,
    .connected-theme .sticky-wrapper-header,
-   .connected-theme .sticky-wrapper-first {
+   .connected-theme .sticky-wrapper-col {
+      border-top-left-radius: .6rem;
       &:before,
       &:after {
        content: "";
        inset:  0 ;
        position: absolute;
-       border-top-left-radius: .6rem;
+       border-radius: inherit;
     }
     &:before {
        background: linear-gradient(to left, var(--bg-core-primary), var(--bg-core-secondary))!important;
@@ -611,17 +612,18 @@ body:has(.connected-theme) .mat-mdc-dialog-surface {
 
 .connected-theme .sticky-wrapper-header{
    position: absolute;
-   z-index: 2;
-   width: calc(100% - 42px);
+   z-index: 1;
+   width: calc(100% - 2px);
    height: var(--day-column-width, 55px);
-   border-radius:.5rem 0 0 0;
+   border-top-right-radius:.5rem;
 }
 
-.connected-theme .sticky-wrapper-first{
+.connected-theme .sticky-wrapper-col{
    position: absolute;
-   height: calc(100% - 10rem);
+   height: calc(100% - 2px);
    width: var(--name-culumn-with, 250px);
    z-index: 1;
+   border-bottom-left-radius:.5rem;
 }
 
 .connected-theme .mat-column-date6,
