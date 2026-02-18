@@ -167,11 +167,7 @@
   padding: 0!important;
   height: auto !important;
   position: relative;
-}
-.list-item-container{
-  padding: 0.75rem 1rem !important;
-  border-radius: inherit!important;
-   & .mdc-list-item__primary-text{
+     & .mdc-list-item__primary-text{
       font-size: 14px!important;
       letter-spacing: normal!important;
   }
@@ -183,6 +179,14 @@
       outline: 2px dashed var(--mat-sys-secondary);
       outline-offset: 1px;
     }
+    &:last-child{
+      margin-bottom: 0!important;
+    }
+}
+.list-item-container{
+  padding: 0.75rem 1rem !important;
+  border-radius: .65rem!important;
+
 }
 /*end test*/
 
@@ -206,6 +210,9 @@
       &.merging-enabled[aria-selected="true"]{
       outline: 2px dashed var(--mat-sys-secondary);
       outline-offset: 1px;
+    }
+      &:last-child{
+      margin-bottom: 0!important;
     }
 }
 

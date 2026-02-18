@@ -332,6 +332,10 @@
     background-color: transparent !important;
 }
 
+.no-hover.mdc-list-item:hover::before {
+    background-color: transparent !important;
+}
+
 cf-navigation-list-item {
     display: contents;
 }
