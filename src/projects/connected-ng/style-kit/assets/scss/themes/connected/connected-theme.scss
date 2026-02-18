@@ -439,7 +439,7 @@ tr.element-row:not(.expanded-row):hover {
 mat-list-option[aria-selected="true"]{
    background-color: var(--bg-core-surface-2-active)!important;
 }
-
+.list-item-container,
 .list-item-border{
    border: none;
    background-color:var(--bg-core-surface-2)!important;

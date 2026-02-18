@@ -159,6 +159,34 @@
 
 /*CUSTOM COMPONENTS*/
 
+/*test*/
+.list-item-custom{
+  //border: 1px solid var(--mat-expansion-actions-divider-color, var(--mat-sys-outline));
+  border-radius: 0.65rem !important;
+  margin-bottom: 0.75rem !important;
+  padding: 0!important;
+  height: auto !important;
+  position: relative;
+}
+.list-item-container{
+  padding: 0.75rem 1rem !important;
+  border-radius: inherit!important;
+   & .mdc-list-item__primary-text{
+      font-size: 14px!important;
+      letter-spacing: normal!important;
+  }
+    &.merging-enabled{
+      outline: 2px dashed var(--mat-sys-outline-variant);
+      outline-offset: 1px;
+    }
+      &.merging-enabled[aria-selected="true"]{
+      outline: 2px dashed var(--mat-sys-secondary);
+      outline-offset: 1px;
+    }
+}
+/*end test*/
+
+
 .list-item-border{
   border: 1px solid var(--mat-expansion-actions-divider-color, var(--mat-sys-outline));
   border-radius: .65rem!important;
