@@ -30,11 +30,12 @@
    // --bg-core-image: url(https://plus.unsplash.com/premium_photo-1738503913362-61ad1fa58f90?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
    // --bg-core-image: url(https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z3JhZGllbnQlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww);
     //--bg-core-image: url(https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z3JhZGllbnQlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww);
-   --bg-core-image: url(/assets/images/connected_bg_6.jpg);
+   --bg-core-image: url(/assets/images/connected_bg_9.jpg);
     --bg-core-surface-2: rgba(255, 255, 255, 0.15);
     --bg-core-surface-2-hover: rgba(255, 255, 255, 0.2);
     --bg-core-surface-2-active: rgba(255, 255, 255, 0.4);
     --bg-core-surface-toolbar: rgba(255,255,255,.4);
+    --bg-core-surface-sticky: rgba(255,255,255,.35);
     --border-1: rgba(255,255,255,.2); 
     --border-2: rgba(255,255,255,.1);
     --text-secondary: rgba(0,0,0,.65);
@@ -61,6 +62,7 @@
        --bg-core-surface-2-hover: rgba(255, 255, 255, 0.05);
        --bg-core-surface-2-active: rgba(255, 255, 255, 0.15);
        --bg-core-surface-toolbar: rgba(30,30,30,.35);
+       --bg-core-surface-sticky: rgba(45,45,45,.4);
        --border-1: rgba(255,255,255,.075);
        --border-2: rgba(200,200,205,.05);
        --text-secondary: rgba(255,255,255,.55);
@@ -87,6 +89,7 @@
        --bg-core-surface-2-hover: rgba(255, 255, 255, 0.05);
        --bg-core-surface-2-active: rgba(255, 255, 255, 0.15);
        --bg-core-surface-toolbar: rgba(30,30,30,.35);
+       --bg-core-surface-sticky: rgba(45,45,45,.4);
        --border-1: rgba(255,255,255,.075);
        --border-2: rgba(200,200,205,.05);
        --text-secondary: rgba(255,255,255,.55);
@@ -280,8 +283,7 @@
 
 
 /*test sticky*/
-
-
+/*how to mask content below sticky header without a solid background (i.e., match the page's background image)*/
 .sticky-wrapper-test {
     background-color: transparent!important;
     position: sticky;
@@ -343,7 +345,7 @@
     }
     &:after {
        //background-color: var(--bg-core-neutral-200)!important;
-       background-color: var(--bg-core-surface-toolbar)!important;
+       background-color: var(--bg-core-surface-sticky)!important;
        z-index: -1!important;
        backdrop-filter: blur(0.85rem)!important;
     }
@@ -418,6 +420,55 @@
 
 }}
 //end button 
+
+
+
+//button 
+.cf-btn-new{
+   letter-spacing: initial!important;
+   border: none!important;
+  backdrop-filter:blur(.5rem) url(#liquid-prism-intense) !important;
+  box-shadow: inset 2px 2px 1px -2px rgba(255, 255, 255, .2), inset -2px -2px 1px -2px rgba(255, 255, 255, .2), inset 0px 4px 8px 0px rgba(255, 255, 255, .1);
+  --mat-sys-primary: light-dark(rgba(255, 255, 255, .15), rgba(255, 255, 255, .05));
+  --mat-sys-on-primary: light-dark(rgba(0,0,0,.6), rgba(255,255,255,.6));
+  --border-1: light-dark(rgba(0, 0, 0, .25), rgba(255,255,255,.075));
+  --border-2: light-dark(rgba(0, 0, 0, .2), rgba(200,200,205,.05));
+
+  &::before {
+     content: "";
+     position: absolute;
+     z-index: 2;
+     pointer-events: none;
+     inset: 0;
+     border-radius: inherit;
+     border: 1px solid transparent;
+     background: linear-gradient(var(--border-1), var(--border-2)) border-box;
+     mask: linear-gradient(black, black) border-box,
+           linear-gradient(black, black) padding-box;
+     mask-composite: subtract;
+     backdrop-filter: saturate(1.15) !important
+   }
+
+  &.btn-primary{
+     backdrop-filter: brightness(1.1) blur(.5rem) url(#liquid-prism-intense) !important;
+  --mat-sys-primary: light-dark(rgba(255, 255, 255, .1), rgba(255, 255, 255, .2));
+}
+&.btn-success{
+     backdrop-filter: brightness(1.15) blur(.5rem) url(#liquid-prism-intense) !important;
+  --mat-sys-primary: light-dark(rgba(0, 255, 0, .15), rgba(0, 255, 0, .15));;
+}
+&.btn-danger{
+     backdrop-filter: brightness(1.15) blur(.5rem) url(#liquid-prism-intense) !important;
+  --mat-sys-primary: light-dark(rgba(255, 0, 0, .15), rgba(255, 0, 0, .15));;
+}
+&.btn-warning{
+     backdrop-filter: brightness(1.15) blur(.5rem) url(#liquid-prism-intense) !important;
+  --mat-sys-primary: light-dark(rgba(255, 170, 0, 0.15), rgba(255, 170, 0, .15));;
+}
+}
+//end button 
+
+
 
 //toggle button
 .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
