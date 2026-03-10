@@ -684,6 +684,29 @@ body:has(.connected-theme) .mat-mdc-dialog-surface {
 }
  /*end table sticky column*/
 
+/*kpi*/
+.connected-theme .kpi.glyph .kpi-glyph-front, 
+.connected-theme .kpi.glyph .kpi-glyph-back {
+   background-color:var(--bg-core-surface-2);
+   border: 1px solid var(--mat-expansion-actions-divider-color);
+}
+.connected-theme .kpi .kpi-frame {
+   background: var(--bg-core-surface-2);
+   border: 1px solid var(--mat-expansion-actions-divider-color);
+}
+.connected-theme .kpi.glyph .kpi-frame {
+   background: radial-gradient(circle at center top, transparent 30px, var(--mat-expansion-actions-divider-color) 30px 31px, var(--bg-core-surface-2) 32px) border-box;
+}
+.connected-theme .kpi-footer {
+   border-top: 1px solid var(--mat-expansion-actions-divider-color);
+}
+.connected-theme .kpi.dense .kpi-body {
+   & .kpi-cell:not(:last-child){
+      border-right: 1px solid var(--mat-expansion-actions-divider-color);
+   }
+}
+/*end kpi*/
+
 .connected-theme {
   @include mat.theme-overrides((
     // primary: #0f6778,
