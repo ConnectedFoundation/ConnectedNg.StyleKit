@@ -475,7 +475,9 @@ mat-icon {
     font-variation-settings: "wght" 700;
   }
   &.fill {
-    font-variation-settings: "FILL" 1;
+    font-variation-settings:
+      "FILL" 1,
+      "wght" 300;
   }
   &.lg {
     font-size: 48px;
