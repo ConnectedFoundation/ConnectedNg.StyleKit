@@ -240,27 +240,17 @@ mat-label {
   }
 }
 
-// .main-layout-content {
-//   cf-main-layout-content {
-//     cn-code-list-list {
-//       height: calc(100vh - 120px);
-//       display: flex;
-//       flex-direction: column;
-//       background-color: orange;
-//     }
-//     cn-action-bar-component {
-//       margin-bottom: 3rem;
-//     }
-//   }
-// }
+.main-layout-content {
+  height: calc(100% - 64px);
+}
 
 /*code-list*/
-.main-layout-content {
-  // display: flex;
-  // flex-direction: column;
-  height: calc(100% - 64px);
-  border: 1px solid red;
-  & > * {
+cn-action-bar-component {
+  //height: calc(100vh - 124px) !important;
+  // border: 1px solid red;
+  display: flex !important;
+  flex-direction: column;
+  & .container {
     flex: 1;
   }
 }
@@ -272,7 +262,7 @@ cn-floating-action-bar {
   position: sticky;
   bottom: 1rem;
   border-radius: 0.6rem;
-  padding: 0.5rem 1.25rem;
+  // padding: 0.5rem 1.25rem;
   left: 1rem;
   right: 1rem;
   margin-top: auto;
@@ -306,11 +296,26 @@ cn-code-list-actions-container cn-action-tile:last-child {
   margin-left: auto;
 }
 
+cn-code-lists-view cn-carousel cn-carousel-item {
+  padding: 0.5rem 1em;
+  border-radius: 0.6rem;
+}
+
+cn-code-lists-view cn-carousel cn-carousel-item:first-child {
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+cn-code-lists-view cn-carousel cn-carousel-item:last-child {
+  background-color: hsla(350, 50%, 60%, 0.75) !important;
+  margin-left: auto;
+  border-radius: 0 0.6rem 0.6rem 0;
+}
+
 .main-layout-content mat-form-field {
   width: 100%;
 }
 
-krka-geo-location-code-list-header {
+.code-list-header {
   display: inline-block;
   background-color: var(--bg-core-surface-2);
   color: var(--mat-sys-on-surface);
@@ -321,6 +326,7 @@ krka-geo-location-code-list-header {
   padding: 0.35rem 0.5rem;
   border: 1px solid var(--border-1);
 }
+
 /*end code-list*/
 
 .stepper-action-bar {

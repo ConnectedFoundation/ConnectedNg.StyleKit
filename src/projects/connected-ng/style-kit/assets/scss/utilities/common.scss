@@ -303,7 +303,20 @@ button[mat-icon-button] {
     outline-offset: 1px;
   }
   &:last-child {
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
+  }
+  &:only-child {
+    margin-bottom: initial;
+  }
+  &.active {
+    background-color: var(--bg-core-surface-2-active) !important;
+  }
+  &:hover:not(.active) {
+    background-color: var(--bg-core-surface-2-hover) !important;
+    cursor: pointer;
+  }
+  &.subtile {
+    background-color: rgba(255, 255, 255, 0.015) !important;
   }
 }
 
