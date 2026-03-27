@@ -266,6 +266,7 @@ cn-floating-action-bar {
   bottom: 1rem;
   border-radius: 0.6rem;
   // padding: 0.5rem 1.25rem;
+  padding: 0.15rem;
   left: 1rem;
   right: 1rem;
   margin-top: auto;
@@ -301,17 +302,29 @@ cn-code-list-actions-container cn-action-tile:last-child {
 
 cn-code-lists-view cn-carousel cn-carousel-item {
   padding: 0.5rem 1em;
-  border-radius: 0.6rem;
+  border-radius: 0.45rem;
+  background-color: var(--bg-core-surface-2);
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--bg-core-surface-2-hover);
+  }
 }
 
 cn-code-lists-view cn-carousel cn-carousel-item:first-child {
-  border-radius: 0.6rem 0 0 0.6rem;
+  //border-radius: 0.6rem 0 0 0.6rem;
 }
 
 cn-code-lists-view cn-carousel cn-carousel-item:last-child {
   background-color: hsla(350, 50%, 60%, 0.75) !important;
   margin-left: auto;
-  border-radius: 0 0.6rem 0.6rem 0;
+  border-radius: 0.45rem 0.45rem 0.45rem 0;
+  &:hover {
+    background-color: hsl(350 50% 65% / 0.75) !important;
+  }
+}
+
+cn-action-tile {
+  position: relative;
 }
 
 .main-layout-content mat-form-field {

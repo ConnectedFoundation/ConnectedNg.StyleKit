@@ -303,7 +303,7 @@ button[mat-icon-button] {
     outline-offset: 1px;
   }
   &:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
   &:only-child {
     margin-bottom: initial;
@@ -319,6 +319,7 @@ button[mat-icon-button] {
     overflow: initial !important;
     background-color: rgba(255, 255, 255, 0.015) !important;
     pointer-events: none;
+    margin-bottom: 1rem !important;
     & mat-icon {
       position: absolute;
       bottom: -14px;
