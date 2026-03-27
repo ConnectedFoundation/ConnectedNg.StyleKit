@@ -248,6 +248,9 @@ mat-label {
 cn-action-bar-component {
   //height: calc(100vh - 124px) !important;
   // border: 1px solid red;
+  min-height: 100% !important;
+  height: initial !important;
+  position: relative;
   display: flex !important;
   flex-direction: column;
   & .container {

@@ -316,7 +316,15 @@ button[mat-icon-button] {
     cursor: pointer;
   }
   &.subtile {
+    overflow: initial !important;
     background-color: rgba(255, 255, 255, 0.015) !important;
+    pointer-events: none;
+    & mat-icon {
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      opacity: 0.2;
+    }
   }
 }
 
@@ -555,6 +563,7 @@ fieldset {
     font-weight: 500;
   }
 }
+
 fieldset:last-child,
 fieldset:only-child {
   margin-bottom: 0;
