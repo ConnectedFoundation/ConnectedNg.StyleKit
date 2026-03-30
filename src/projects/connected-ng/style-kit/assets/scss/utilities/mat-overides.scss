@@ -87,6 +87,11 @@ mat-label {
   opacity: 0.75 !important;
   -webkit-text-fill-color: currentColor;
 }
+
+.mat-mdc-form-field,
+.mat-mdc-select {
+  font-weight: 500 !important;
+}
 /*end inputs*/
 
 /*tabs*/
@@ -296,10 +301,6 @@ cn-floating-action-bar {
   }
 }
 
-cn-code-list-actions-container cn-action-tile:last-child {
-  margin-left: auto;
-}
-
 cn-code-lists-view cn-carousel cn-carousel-item {
   padding: 0.5rem 1em;
   border-radius: 0.45rem;
@@ -323,8 +324,23 @@ cn-code-lists-view cn-carousel cn-carousel-item:last-child {
   }
 }
 
-cn-action-tile {
+cn-code-list-actions-container cn-action-tile {
   position: relative;
+  padding: 0.25rem 0.5em;
+  border-radius: 0.45rem;
+  flex: 0 1 175px;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--bg-core-surface-2-hover);
+  }
+}
+
+cn-code-list-actions-container cn-action-tile:last-child {
+  margin-left: auto;
+  border-right: none;
+  @include breakpoint-down("md") {
+    margin-left: initial;
+  }
 }
 
 .main-layout-content mat-form-field {
@@ -341,6 +357,14 @@ cn-action-tile {
   border-radius: 0.35rem;
   padding: 0.35rem 0.5rem;
   border: 1px solid var(--border-1);
+  margin-bottom: 0.5rem;
+}
+
+cn-code-list-insert-form .grid,
+cn-code-list-update-form .grid {
+  row-gap: 1.5rem;
+  align-items: center;
+  font-weight: 500;
 }
 
 /*end code-list*/
@@ -612,3 +636,37 @@ mat-icon {
 /*end Material symbols */
 
 /*test input redonly*/
+
+/*mtx-overides*/
+.ng-select .ng-select-container,
+.ng-select .ng-clear-wrapper,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  color: var(--mat-sys-on-surface) !important;
+}
+.ng-select .ng-arrow {
+  border-color: var(--mat-sys-on-surface) transparent transparent !important;
+}
+.ng-select.ng-select-opened .ng-arrow {
+  border-color: transparent transparent var(--mat-sys-on-surface) !important;
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+  background-color: var(--mat-sys-secondary-container) !important;
+  background-color: var(
+    --mat-option-hover-state-layer-color,
+    color-mix(
+      in srgb,
+      var(--mat-sys-on-surface)
+        calc(var(--mat-sys-hover-state-layer-opacity) * 100%),
+      transparent
+    )
+  ) !important;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected {
+  background-color: var(--mat-sys-secondary-container) !important;
+  background-color: light-dark(
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.1)
+  ) !important;
+}
+/*edn mtx-overides*/
