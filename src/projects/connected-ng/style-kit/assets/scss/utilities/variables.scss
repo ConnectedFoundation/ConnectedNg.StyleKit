@@ -1,21 +1,30 @@
-
 :root {
---text-secondary: light-dark(rgba(0,0,0,.65), rgba(255,255,255,.55))!important;
---border-1: light-dark(rgba(0,0,0,.2), rgba(255,255,255,.075)); 
---border-2: light-dark(rgba(0,0,0,.1), rgba(200,200,205,.05));
+  --text-secondary: light-dark(
+    rgba(0, 0, 0, 0.65),
+    rgba(255, 255, 255, 0.55)
+  ) !important;
+  --border-1: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.075));
+  --border-2: light-dark(rgba(0, 0, 0, 0.1), rgba(200, 200, 205, 0.05));
+  --bg-core-surface-2: light-dark(
+    rgba(0, 0, 0, 0.015),
+    rgba(255, 255, 255, 0.015)
+  );
+  --bg-core-surface-2-hover: light-dark(
+    rgba(0, 0, 0, 0.035),
+    rgba(255, 255, 255, 0.035)
+  );
 }
 
-
 /*VAR*/
-$h:257;//257
+$h: 257; //257
 
-$primary-color:hsl($h, 31%, 69%) !default;
-//$primary-color:hsl(223, 51%, 80%); 
+$primary-color: hsl($h, 31%, 69%) !default;
+//$primary-color:hsl(223, 51%, 80%);
 $secondary-color: rgba(250, 250, 250, 1);
 
 //neutral-colors
 $element-bg-core: rgba(255, 255, 255, 0.25); // elements-background
-$element-fg-core : rgba(255, 255, 255, 0.5); // elements-foreground
+$element-fg-core: rgba(255, 255, 255, 0.5); // elements-foreground
 
 //info colors
 $blue: #0dbcf0c4;
@@ -24,10 +33,10 @@ $yellow: #ffb480;
 $green: #80d89e;
 $cyan: #729fe9;
 $secondary: #ced4da;
-$light: rgba(255,255,255,.5);
-$dark: rgba(35,35,35,.5);
-$vibrant1:  #bf64e6;
-$vibrant2:  #e59191; 
+$light: rgba(255, 255, 255, 0.5);
+$dark: rgba(35, 35, 35, 0.5);
+$vibrant1: #bf64e6;
+$vibrant2: #e59191;
 
 //color palette
 $theme-colors: (
@@ -38,10 +47,10 @@ $theme-colors: (
   "warning": $yellow,
   "danger": $red,
   "light": $light,
-  "dark": $dark, 
+  "dark": $dark,
 );
 
-//font-colors 
+//font-colors
 $text-core-hc: #212121; //title
 $text-core: #525252; //text
 $text-core-lc: #7d7d80; //metadata
@@ -86,13 +95,13 @@ $base-box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 10%) !default;
 $transition: all 0.3s ease-in-out;
 
 //z-index
-$tooltip-zindex:896;
+$tooltip-zindex: 896;
 $appbar-zindex: 897;
 $sitenav-zindex: 899;
 $sitenav-right-zindex: 898;
 $backdrop-zindex: 999;
-$dropdown-zindex: 10000; 
-$modal-zindex: 10000; 
-$notification-zindex: 10001; 
-$top-loading-bar-zindex: 10002; 
+$dropdown-zindex: 10000;
+$modal-zindex: 10000;
+$notification-zindex: 10001;
+$top-loading-bar-zindex: 10002;
 /*END VAR*/

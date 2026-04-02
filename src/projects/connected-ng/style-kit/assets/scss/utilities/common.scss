@@ -555,8 +555,7 @@ mat-list-option[aria-selected="true"].selection-indicator-hidden {
 /*FIELDSET*/
 fieldset {
   border-radius: 0.65rem;
-  border: 1px solid
-    var(--mat-expansion-actions-divider-color, var(--mat-sys-outline));
+  border: 1px solid var(--mat-sys-outline);
   margin-bottom: 1rem;
   padding-bottom: 0.85rem;
   legend {

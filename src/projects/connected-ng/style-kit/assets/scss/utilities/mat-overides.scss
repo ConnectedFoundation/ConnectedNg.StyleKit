@@ -323,15 +323,35 @@ cn-code-lists-view cn-carousel cn-carousel-item:last-child {
     background-color: hsl(350 50% 65% / 0.75) !important;
   }
 }
+/*action-list*/
+.cn-list-action-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  flex-wrap: wrap;
+}
+.cn-list-action-group {
+  display: flex;
+  //width: 100%;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
 
-cn-code-list-actions-container cn-action-tile {
+cn-code-list-actions-container cn-action-tile,
+.collapsed-content cn-action-tile {
   position: relative;
-  padding: 0.25rem 0.5em;
+  padding: 0.25rem 0.75em;
   border-radius: 0.45rem;
-  flex: 0 1 175px;
+  //flex: 0 1 175px;
+  flex: 1 1 auto;
   transition: background-color 0.3s ease-in-out;
   &:hover {
     background-color: var(--bg-core-surface-2-hover);
+  }
+  @include breakpoint-down("md") {
+    flex: 1 1 100%;
   }
 }
 
@@ -342,7 +362,7 @@ cn-code-list-actions-container cn-action-tile:last-child {
     margin-left: initial;
   }
 }
-
+/*end action-list*/
 .main-layout-content mat-form-field {
   width: 100%;
 }
