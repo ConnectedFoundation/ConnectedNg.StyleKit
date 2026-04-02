@@ -711,7 +711,8 @@ body:has(.connected-theme) .mat-mdc-dialog-surface {
 /*end dialog*/
 
 /*stepper*/
-.connected-theme .mat-step-header[aria-selected="true"] {
+.connected-theme .mat-step-header[aria-selected="true"],
+.connected-theme .mat-step-header[aria-expanded="true"] {
   background: var(--bg-core-surface-2) !important;
 }
 .connected-theme .mat-vertical-content {
