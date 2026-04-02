@@ -326,6 +326,10 @@ cn-code-lists-view cn-carousel cn-carousel-item:last-child {
   }
 }
 /*action-list*/
+fieldset:has(cn-code-list-update-form) {
+  background: var(--bg-core-surface-2);
+}
+
 .cn-list-action-wrapper {
   display: flex;
   justify-content: space-between;
@@ -666,6 +670,11 @@ mat-icon {
 .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
   color: var(--mat-sys-on-surface) !important;
 }
+
+.ng-select .ng-select-container {
+  align-items: baseline !important;
+}
+
 .ng-select .ng-arrow {
   border-color: var(--mat-sys-on-surface) transparent transparent !important;
 }
