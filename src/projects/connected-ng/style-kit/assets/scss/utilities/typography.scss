@@ -7,10 +7,28 @@
   padding: 0.75rem;
 }
 
+// .read-only,
+// mat-form-field:has([readonly]),
+// mat-form-field:has([readonly="true"]) {
+//   opacity: 0.6;
+//   pointer-events: none !important;
+//   cursor: default;
+//   & *:hover,
+//   & *:focus-visible,
+//   & *:focus {
+//     pointer-events: none !important;
+//   }
+//   & .mat-mdc-floating-label,
+//   .mat-mdc-form-field .mdc-floating-label,
+//   .mdc-floating-label,
+//   mat-label {
+//     pointer-events: none !important;
+//   }
+// }
+
 .read-only,
 mat-form-field:has([readonly]),
 mat-form-field:has([readonly="true"]) {
-  opacity: 0.6;
   pointer-events: none !important;
   cursor: default;
   & *:hover,
@@ -23,6 +41,17 @@ mat-form-field:has([readonly="true"]) {
   .mdc-floating-label,
   mat-label {
     pointer-events: none !important;
+    opacity: 0.4;
+  }
+  &
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+    .mat-mdc-notch-piece {
+    opacity: 0.4 !important;
+    pointer-events: none !important;
+  }
+  & input {
+    // pointer-events: all !important;
+    opacity: 0.8 !important;
   }
 }
 
