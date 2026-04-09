@@ -152,7 +152,7 @@
 
 .kpi-header {
   height: 25px;
-  font-size: 0.9rem;
+  font-size: 0.9em;
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
@@ -205,7 +205,7 @@
     text-align: end;
   }
   & .label {
-    font-size: 0.85rem;
+    font-size: 0.85em;
     color: currentColor;
     text-transform: uppercase;
     letter-spacing: 0.035rem;
@@ -216,7 +216,7 @@
     white-space: nowrap;
   }
   & .value {
-    font-size: 2.75rem;
+    font-size: 3em;
     font-weight: 600;
     display: inline-grid;
     margin-bottom: -0.25rem;
@@ -249,7 +249,7 @@
     text-align: end;
   }
   & .label {
-    font-size: 0.75rem;
+    font-size: 0.75em;
     color: currentColor;
     text-transform: uppercase;
     letter-spacing: 0.035rem;
@@ -260,7 +260,7 @@
     white-space: nowrap;
   }
   & .value {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: 500;
     display: inline-grid;
     margin-bottom: -0.25rem;
@@ -268,7 +268,7 @@
       light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
   }
   & .description {
-    font-size: 0.85rem;
+    font-size: 0.85em;
     font-weight: initial;
   }
 }
@@ -279,10 +279,10 @@
 
 @container kpi-container (width < 315px) {
   .kpi-body .value {
-    font-size: 2rem;
+    font-size: 2em;
   }
   .kpi-footer .value {
-    font-size: 1.25rem;
+    font-size: 1.25em;
   }
   .description:not(.description.d-block) {
     display: none;
@@ -576,7 +576,7 @@ $green: #80d89e;
     border-right: 1px solid var(--mat-sys-outline);
   }
   & .label {
-    font-size: 0.75rem;
+    font-size: 0.75em;
     color: currentColor;
     text-transform: capitalize;
     letter-spacing: initial;
@@ -587,7 +587,7 @@ $green: #80d89e;
     white-space: nowrap;
   }
   & .value {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: 500;
     display: inline-grid;
     margin-bottom: -25rem;
@@ -601,7 +601,8 @@ $green: #80d89e;
 .kpi-list {
   display: grid;
   gap: 0.15rem;
-  padding-inline-end: 0.5rem;
+  //padding-inline-end: 0.5rem;
+  grid-auto-rows: max-content;
 }
 .kpi-list-item {
   display: grid;
@@ -627,5 +628,36 @@ $green: #80d89e;
     font-size: 0.65rem;
     font-weight: 500;
     line-height: 1;
+  }
+}
+
+.kpi-legend {
+  display: grid;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 4px;
+  gap: 0.25rem;
+  grid-auto-rows: max-content;
+}
+.kpi-legend-item {
+  display: grid;
+  grid-template-columns: 25px 5px 1fr;
+  gap: 0.25rem;
+  align-items: baseline;
+  & .status-line {
+    margin: auto;
+    height: 85%;
+  }
+  & .kpi-item-title {
+    font-size: 0.85rem;
+    color: var(--mat-sys-on-surface-variant);
+
+    line-height: 1.1;
+    font-weight: 300;
+  }
+  & .kpi-item-value {
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.1;
   }
 }

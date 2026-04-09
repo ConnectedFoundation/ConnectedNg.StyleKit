@@ -26,7 +26,7 @@
 //   }
 // }
 
-.read-only,
+mat-form-field.read-only,
 mat-form-field:has([readonly]),
 mat-form-field:has([readonly="true"]) {
   pointer-events: none !important;
@@ -52,6 +52,20 @@ mat-form-field:has([readonly="true"]) {
   & input {
     // pointer-events: all !important;
     opacity: 0.8 !important;
+  }
+  & mat-icon,
+  .mat-mdc-form-field-icon-suffix {
+    pointer-events: none !important;
+    opacity: 0.8 !important;
+  }
+}
+mat-checkbox.read-only,
+mat-checkbox:has([readonly]),
+mat-checkbox:has([readonly="true"]) {
+  pointer-events: none !important;
+  cursor: default;
+  & .mdc-checkbox {
+    opacity: 0.4 !important;
   }
 }
 
