@@ -11,7 +11,7 @@ export class ChartUtilitiesService {
     return value;
   }
 
-  colors = Colors;
+  get colors() { return Colors; }
   styles = Styles;
 }
 
@@ -22,6 +22,7 @@ class Colors {
   static blue = ChartUtilitiesService.getCSSVariable('--chart-blue');
   static violet = ChartUtilitiesService.getCSSVariable('--chart-violet');
   static area = ChartUtilitiesService.getCSSVariable('--chart-area');
+  static colorIndex = [this.red, this.orange, this.green, this.blue, this.violet];
 }
 
 class XAxis {

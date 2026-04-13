@@ -1,12 +1,14 @@
-@import './breakpoints.scss';
+@import "./breakpoints.scss";
 
 $grid-columns: 12;
 $gap: 1rem;
 
-.grid-container-fluid, .grid-container {
+.grid-container-fluid,
+.grid-container {
   display: grid;
   grid-template-columns: repeat($grid-columns, 1fr);
-  gap: $gap;
+  column-gap: $gap;
+  row-gap: 0.25rem;
   //padding: 10px 20px;
 }
 .grid-container {
