@@ -1,71 +1,99 @@
-import { Injectable } from '@angular/core';
+import { computed, inject, Injectable } from '@angular/core';
+import { ThemeService } from './themeservice';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChartUtilitiesService {
-  static getCSSVariable(varName: string): string {
-    const value = getComputedStyle(document.documentElement)
-      .getPropertyValue(varName)
-      .trim();
-    return value;
+  private static _el: HTMLElement | null = null;
+
+  private static get el(): HTMLElement {
+    if (!this._el) {
+      this._el = document.createElement('div');
+      this._el.style.display = 'none';
+      document.body.appendChild(this._el);
+    }
+    return this._el;
   }
 
-  get colors() { return Colors; }
-  styles = Styles;
-}
+  static getCSSVariable(varName: string): string {
+    this.el.style.color = `var(${varName})`;
+    return getComputedStyle(this.el).color;
+  }
 
-class Colors {
-  static red = ChartUtilitiesService.getCSSVariable('--chart-red');
-  static orange = ChartUtilitiesService.getCSSVariable('--chart-orange');
-  static green = ChartUtilitiesService.getCSSVariable('--chart-green');
-  static blue = ChartUtilitiesService.getCSSVariable('--chart-blue');
-  static violet = ChartUtilitiesService.getCSSVariable('--chart-violet');
-  static area = ChartUtilitiesService.getCSSVariable('--chart-area');
-  static colorIndex = [this.red, this.orange, this.green, this.blue, this.violet];
-}
+  private themeService = inject(ThemeService);
 
-class XAxis {
-  static line = { color: ChartUtilitiesService.getCSSVariable('--axis-line') };
-  static label = { color: ChartUtilitiesService.getCSSVariable('--axis-label') };
-  static splitLine = { color: ChartUtilitiesService.getCSSVariable('--split-line') };
-}
+  readonly colors = computed(() => {
+    this.themeService.selectedTheme();
+    this.themeService.isDarkMode();
+    const css = (v: string) => ChartUtilitiesService.getCSSVariable(v);
 
-class YAxis {
-  static line = { color: ChartUtilitiesService.getCSSVariable('--axis-line') };
-  static label = { color: ChartUtilitiesService.getCSSVariable('--axis-label') };
-  static splitLine = { color: ChartUtilitiesService.getCSSVariable('--split-line') };
-}
+    const red = css('--chart-red');
+    const orange = css('--chart-orange');
+    const green = css('--chart-green');
+    const blue = css('--chart-blue');
+    const violet = css('--chart-violet');
+    const area = css('--chart-area');
 
-class Grid {
-  static background = { color: ChartUtilitiesService.getCSSVariable('--chart-grid-background') };
-  static border = { color: ChartUtilitiesService.getCSSVariable('--chart-grid-border') };
-}
+    return {
+      red,
+      orange,
+      green,
+      blue,
+      violet,
+      area,
+      colorIndex: [red, orange, green, blue, violet],
+    };
+  });
 
-class Tooltip {
-  static background = { color: ChartUtilitiesService.getCSSVariable('--chart-tooltip-background') };
-  static text = { color: ChartUtilitiesService.getCSSVariable('--chart-tooltip-text') };
-  static border = { color: ChartUtilitiesService.getCSSVariable('--chart-tooltip-border') };
-}
+  readonly styles = computed(() => {
+    this.themeService.selectedTheme();
+    this.themeService.isDarkMode();
+    const css = (v: string) => ChartUtilitiesService.getCSSVariable(v);
 
-class Legend {
-  static text = { color: ChartUtilitiesService.getCSSVariable('--chart-legend-text') };
-}
+    const axisLine = css('--axis-line');
+    const axisLabel = css('--axis-label');
+    const splitLine = css('--split-line');
+    const gridBg = css('--chart-grid-background');
+    const gridBorder = css('--chart-grid-border');
+    const tooltipBg = css('--chart-tooltip-background');
+    const tooltipText = css('--chart-tooltip-text');
+    const tooltipBorder = css('--chart-tooltip-border');
+    const legendText = css('--chart-legend-text');
+    const seriesLine = css('--chart-series-line');
+    const area = css('--chart-area');
 
-class Series {
-  static line = { color: ChartUtilitiesService.getCSSVariable('--chart-series-line') };
-  static area = {
-    color: ChartUtilitiesService.getCSSVariable('--chart-area'),
-    opacity: 0.5,
-    origin: 'start' as const,
-  };
-}
-
-class Styles {
-  static xAxis = XAxis;
-  static yAxis = YAxis;
-  static grid = Grid;
-  static tooltip = Tooltip;
-  static legend = Legend;
-  static series = Series;
+    return {
+      xAxis: {
+        line: { color: axisLine },
+        label: { color: axisLabel },
+        splitLine: { color: splitLine },
+      },
+      yAxis: {
+        line: { color: axisLine },
+        label: { color: axisLabel },
+        splitLine: { color: splitLine },
+      },
+      grid: {
+        background: { color: gridBg },
+        border: { color: gridBorder },
+      },
+      tooltip: {
+        background: { color: tooltipBg },
+        text: { color: tooltipText },
+        border: { color: tooltipBorder },
+      },
+      legend: {
+        text: { color: legendText },
+      },
+      series: {
+        line: { color: seriesLine },
+        area: {
+          color: area,
+          opacity: 0.5,
+          origin: 'start' as const,
+        },
+      },
+    };
+  });
 }

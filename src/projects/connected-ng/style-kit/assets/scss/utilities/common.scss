@@ -605,6 +605,7 @@ fieldset:only-child {
 
 /*STATUS DOT*/
 .status-dot {
+  display: inline-flex;
   width: 0.65rem;
   height: 0.65rem;
   border-radius: 50%;
