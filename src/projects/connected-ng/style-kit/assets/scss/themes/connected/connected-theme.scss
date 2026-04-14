@@ -727,10 +727,10 @@ body:has(.connected-theme) .mat-mdc-dialog-surface {
 /*end stepper*/
 
 /*table sticky column*/
-.connected-theme tr:hover,
-.connected-theme td:hover {
-  background: var(--bg-core-surface-2-hover) !important;
-}
+// .connected-theme tr:hover,
+// .connected-theme td:hover {
+//   background: var(--bg-core-surface-2-hover) !important;
+// }
 
 .connected-theme th.mat-mdc-table-sticky-border-elem-left:first-of-type,
 .connected-theme .sticky-wrapper-header,

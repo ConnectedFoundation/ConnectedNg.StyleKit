@@ -10,3 +10,34 @@
     --axis-label: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
     --chart-legend-text: light-dark(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.7));
 }
+
+.bg-danger-chart {
+  background-color: var(--chart-red);
+}
+.text-danger-chart {
+  color: var(--chart-red);
+}
+.bg-warning-chart {
+  background-color: var(--chart-orange);
+}
+.text-warning-chart {
+  color: var(--chart-orange);
+}
+.bg-success-chart {
+  background-color: var(--chart-green);
+}
+.text-success-chart {
+  color: var(--chart-green);
+}
+.bg-info-chart {
+  background-color: var(--chart-blue);
+}
+.text-info-chart {
+  color: var(--chart-blue);
+}
+.bg-ultra-chart {
+  background-color: var(--chart-violet);
+}
+.text-ultra-chart {
+  color: var(--chart-violet);
+}

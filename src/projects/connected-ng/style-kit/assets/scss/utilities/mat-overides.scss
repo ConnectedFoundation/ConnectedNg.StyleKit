@@ -1,5 +1,7 @@
 @use "@angular/material" as mat;
 
+
+
 :host {
   @include mat.table-overrides(
     (
@@ -62,6 +64,10 @@
       container-max-width: 600px,
     )
   );
+}
+
+table.mat-mdc-table {
+  background-color: transparent!important;
 }
 
 .warning .mat-badge-content {
