@@ -151,6 +151,29 @@ button[mat-icon-button] {
     }
   }
 
+  $medium-size-button: 36px;
+  $medium-size-icon: 24px;
+ 
+  &.icon-btn-md {
+    width: $medium-size-button;
+    height: $medium-size-button;
+    line-height: $medium-size-button;
+    padding: calc(($medium-size-button - $medium-size-icon) / 2);
+    .mat-icon {
+      font-size: $medium-size-icon;
+      width: $medium-size-icon;
+      height: $medium-size-icon;
+      line-height: $medium-size-icon;
+    }
+    .mat-button-ripple {
+      font-size: inherit;
+      width: inherit;
+      height: inherit;
+      line-height: inherit;
+    }
+  }
+
+
   $small-size-button: 24px;
   $small-size-icon: 18px;
 

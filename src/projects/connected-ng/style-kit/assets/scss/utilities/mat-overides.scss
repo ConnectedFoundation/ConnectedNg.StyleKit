@@ -38,7 +38,7 @@
   );
   @include mat.checkbox-overrides(
     (
-      state-layer-size: 24px,
+      state-layer-size: 36px, 
     )
   );
   @include mat.tree-overrides(
@@ -194,6 +194,12 @@ mat-label {
 .mat-step-header[aria-expanded="false"] {
   pointer-events: none;
 }
+
+.mat-step-header .mat-step-icon{
+  font-size: .75em;
+  line-height: initial;
+  font-weight: 500;
+} 
 
 .mat-vertical-content {
   padding: 24px 48px !important;
