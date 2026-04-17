@@ -717,5 +717,15 @@ mat-icon {
 .ng-dropdown-panel {
   margin-top: 14px;
 }
+mat-form-field.read-only,
+mat-form-field:has([readonly]),
+mat-form-field:has([readonly="true"]) {
+  .ng-select .ng-arrow {
+  opacity:.8!important;
 
+  }
+  .ng-select.ng-select-opened .ng-arrow {
+    opacity:.8!important;
+  }
+}
 /*edn mtx-overides*/

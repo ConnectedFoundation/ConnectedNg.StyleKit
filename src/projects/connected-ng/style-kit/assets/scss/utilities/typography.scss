@@ -49,14 +49,29 @@ mat-form-field:has([readonly="true"]) {
     opacity: 0.4 !important;
     pointer-events: none !important;
   }
-  & input {
+  & input,
+  & mat-select,
+  & mtx-select {
     // pointer-events: all !important;
     opacity: 0.8 !important;
   }
   & mat-icon,
-  .mat-mdc-form-field-icon-suffix {
+  .mat-mdc-form-field-icon-suffix,
+  .mat-mdc-select-arrow-wrapper,
+  .mat-mdc-select-arrow {
     pointer-events: none !important;
     opacity: 0.8 !important;
+  }
+  & button{
+  pointer-events: none !important;
+  opacity: 0.8 !important;
+  }
+  & .ng-select .ng-select-container, 
+  & .ng-select .ng-clear-wrapper, 
+  & .ng-select .ng-arrow-wrapper .ng-arrow, 
+  & .ng-dropdown-panel .ng-dropdown-panel-items .ng-option{
+  pointer-events: none !important;
+  opacity: 0.8 !important;
   }
 }
 mat-checkbox.read-only,
