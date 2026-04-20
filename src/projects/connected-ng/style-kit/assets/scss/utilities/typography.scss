@@ -82,6 +82,9 @@ mat-checkbox:has([readonly="true"]) {
   & .mdc-checkbox {
     opacity: 0.4 !important;
   }
+  & .mdc-label {
+    opacity: 0.8 !important;
+  }
 }
 
 .display-only {
