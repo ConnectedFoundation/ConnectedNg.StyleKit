@@ -1,5 +1,6 @@
 /*KPI*/
 .kpi {
+  height: 100%;
   position: relative;
   z-index: 0;
   display: block;
@@ -86,8 +87,8 @@
   right: -2px;
   top: -2px;
   //background-color:var(--mat-sys-primary-container);
-  background-color: var(--mat-sys-surface);
-  border: 1px solid var(--mat-sys-outline);
+  background-color: var(--bg-core-surface-2);
+  border: 1px solid var(--mat-sys-outline-variant);
   // filter: drop-shadow(0px 4px .15rem  var(--mat-sys-primary-container)) opacity(50%);
   background-size: cover;
   .tp-glyph {
@@ -109,8 +110,8 @@
   height: 100%;
   padding: 0.5rem 1rem;
   border-radius: 0.65rem;
-  border: 1px solid var(--mat-sys-outline);
-  background: var(--mat-sys-surface);
+  border: 1px solid var(--mat-sys-outline-variant);
+  background: var(--bg-core-surface-2);
   overflow: clip;
   transition: 0.3s;
 }
@@ -129,7 +130,7 @@
   background: radial-gradient(
       circle at center top,
       transparent 30px,
-      var(--mat-sys-outline) 30px 31px,
+      var(--mat-sys-outline-variant) 30px 31px,
       var(--mat-sys-surface) 32px
     )
     border-box;
@@ -324,7 +325,7 @@ $green: #80d89e;
 }
 
 .kpi.danger .kpi-frame {
-  --mat-sys-outline: #{$red};
+  --mat-sys-outline-variant: #{$red};
   --mat-expansion-actions-divider-color: #{$red};
 }
 
@@ -350,7 +351,7 @@ $green: #80d89e;
 }
 
 .kpi.warning .kpi-frame {
-  --mat-sys-outline: #{$yellow};
+  --mat-sys-outline-variant: #{$yellow};
   --mat-expansion-actions-divider-color: #{$yellow};
 }
 
@@ -376,7 +377,7 @@ $green: #80d89e;
 }
 
 .kpi.info .kpi-frame {
-  --mat-sys-outline: #{$blue};
+  --mat-sys-outline-variant: #{$blue};
   --mat-expansion-actions-divider-color: #{$blue};
 }
 
@@ -402,7 +403,7 @@ $green: #80d89e;
 }
 
 .kpi.success .kpi-frame {
-  --mat-sys-outline: #{$green};
+  --mat-sys-outline-variant: #{$green};
   --mat-expansion-actions-divider-color: #{$green};
 }
 
@@ -489,7 +490,7 @@ $green: #80d89e;
     to top left,
     color-mix(
       in srgb,
-      var(--mat-sys-outline),
+      var(--mat-sys-outline-variant),
       var(--mat-sys-surface-container-lowest) 65%
     ),
     transparent
@@ -573,7 +574,7 @@ $green: #80d89e;
   grid-auto-flow: column;
   align-items: center;
   & .kpi-cell:not(:last-child) {
-    border-right: 1px solid var(--mat-sys-outline);
+    border-right: 1px solid var(--mat-sys-outline-variant);
   }
   & .label {
     font-size: 0.75em;

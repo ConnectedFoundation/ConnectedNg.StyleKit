@@ -1,14 +1,14 @@
 :root {
-    --chart-red: rgba(235, 30, 35, 1);
-    --chart-orange: rgba(240, 100, 35, 1);
-    --chart-green: rgba(140, 200, 60, 1);
-    --chart-blue: rgba(40, 170, 225, 1);
-    --chart-violet: rgba(125, 60, 150, 1);
-    --chart-area: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
-    --split-line: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
-    --axis-line: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
-    --axis-label: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
-    --chart-legend-text: light-dark(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.7));
+  --chart-red: rgba(235, 30, 35, 1);
+  --chart-orange: rgba(240, 100, 35, 1);
+  --chart-green: rgba(140, 200, 60, 1);
+  --chart-blue: rgba(40, 170, 225, 1);
+  --chart-violet: rgba(125, 60, 150, 1);
+  --chart-area: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+  --split-line: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+  --axis-line: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+  --axis-label: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
+  --chart-legend-text: light-dark(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.7));
 }
 
 .bg-danger-chart {
@@ -41,3 +41,114 @@
 .text-ultra-chart {
   color: var(--chart-violet);
 }
+
+/*GAUGE*/
+.gauge-chart {
+  height: 100%;
+  overflow: clip;
+  aspect-ratio: 1;
+  position: relative;
+  margin-bottom: -2.5rem;
+  filter: drop-shadow(
+    1px 1px 2px light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75))
+  );
+  & .value-wrapper {
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 10px);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1;
+    & .value {
+      font-size: 2.75em;
+      font-size: clamp(2rem, calc(100cqw / 10), 5rem);
+      font-weight: 500;
+      text-shadow: none;
+      margin-bottom: initial;
+      text-shadow: 1px 1px 2px
+        light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
+    }
+    & .description {
+      font-size: 1em;
+      font-weight: initial;
+      padding-left: 0.05em;
+    }
+    & .value.sm {
+      font-size: 1.5em;
+      font-size: clamp(1rem, calc(100cqw / 20), 2rem);
+      font-weight: initial;
+    }
+    & .description.sm {
+      font-size: 0.75em;
+    }
+    & .value.lg {
+      font-size: 1.5em;
+      font-size: clamp(2rem, calc(100cqw / 6), 7rem);
+    }
+    & .description.lg {
+      font-size: 0.75em;
+    }
+  }
+}
+
+@container kpi-container (width < 380px) {
+  .gauge-chart .value-wrapper {
+    left: 50%;
+  }
+  .description {
+    display: none;
+  }
+}
+/*END GAUGE*/
+
+/*stackedbar kpi*/
+.stackedbar-value-wrapper {
+  padding-right: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 0.05em;
+  flex: 1;
+
+  .stackedbar-value {
+    font-size: 1.5em;
+    line-height: 1.25;
+    text-shadow: 1px 1px 2px
+      light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
+    &.lg {
+      font-size: 2.25em;
+      font-size: clamp(1.5rem, calc(100cqw / 12), 2.25rem);
+      font-weight: 500;
+    }
+    & .description {
+      font-size: 0.65em;
+      font-weight: initial;
+    }
+  }
+}
+/*end stackedbar kpi*/
+
+/*FOOTER GRID*/
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  & .value {
+    font-size: 0.75em;
+    font-weight: initial;
+    text-shadow: none;
+    margin-bottom: initial;
+    display: initial;
+  }
+  & .description {
+    font-size: 0.65em;
+  }
+  @container kpi-container (width < 380px) {
+    .value,
+    .description {
+      display: none !important;
+    }
+  }
+}
+/*END FOOTER GRID*/
