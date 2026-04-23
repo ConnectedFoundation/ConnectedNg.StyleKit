@@ -705,7 +705,8 @@ body:has(.connected-theme) .mat-mdc-dialog-surface {
     rgba(255, 255, 255, 0.1)
   );
   background-color: var(--bg-core-surface-2-hover) !important;
-  backdrop-filter: blur(0.75rem) url(#liquid-prism-intense) !important;
+  //backdrop-filter: blur(0.75rem) url(#liquid-prism-intense) !important;
+  backdrop-filter: blur(0.75rem) !important;
   border: 1px solid var(--border-1);
 }
 /*end dialog*/

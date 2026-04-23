@@ -581,11 +581,16 @@ fieldset {
   border-radius: 0.65rem;
   border: 1px solid var(--mat-sys-outline);
   margin-bottom: 1rem;
+  padding-top: 0;
   padding-bottom: 0.85rem;
   legend {
     padding-inline: 0.35rem;
     font-weight: 500;
   }
+}
+
+fieldset:has(legend + :empty) {
+  display: none;
 }
 
 fieldset:last-child,
