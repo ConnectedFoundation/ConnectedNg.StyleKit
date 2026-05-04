@@ -222,6 +222,10 @@ mat-label {
   margin-left: 0 !important;
 }
 
+.mat-vertical-content-container-active>.mat-vertical-stepper-content {
+    overflow: visible!important;
+}
+
 .mat-stepper-vertical-line::before {
   left: 36px !important;
 }
