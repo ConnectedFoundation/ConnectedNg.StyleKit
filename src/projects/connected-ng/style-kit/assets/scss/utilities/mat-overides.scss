@@ -319,7 +319,8 @@ cn-floating-action-bar {
   }
 }
 
-cn-code-lists-view cn-carousel cn-carousel-item {
+cn-code-lists-view cn-carousel cn-carousel-item,
+mat-dialog-container cn-carousel cn-carousel-item {
   padding: 0.5rem 1em;
   border-radius: 0.45rem;
   background-color: var(--bg-core-surface-2);
@@ -339,7 +340,8 @@ cn-code-lists-view cn-carousel cn-carousel-item:first-child {
   //border-radius: 0.6rem 0 0 0.6rem;
 }
 
-cn-code-lists-view cn-carousel cn-carousel-item:last-child {
+cn-code-lists-view cn-carousel cn-carousel-item:last-child,
+mat-dialog-container cn-carousel cn-carousel-item:last-child {
   background-color: hsla(350, 50%, 60%, 0.75) !important;
   margin-left: auto;
   border-radius: 0.45rem 0.45rem 0.45rem 0;
