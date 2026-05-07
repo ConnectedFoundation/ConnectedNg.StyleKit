@@ -318,6 +318,17 @@ cn-floating-action-bar {
     backdrop-filter: saturate(1.5);
   }
 }
+mat-dialog-content:has( cn-floating-action-bar){
+  max-height: initial!important ;
+}
+
+mat-dialog-content cn-floating-action-bar{
+  bottom: 0rem!important;
+  margin-top: 1rem !important;
+    &::before {
+    backdrop-filter: none;
+  }
+}
 
 cn-code-lists-view cn-carousel cn-carousel-item,
 mat-dialog-container cn-carousel cn-carousel-item {
@@ -342,11 +353,14 @@ cn-code-lists-view cn-carousel cn-carousel-item:first-child {
 
 cn-code-lists-view cn-carousel cn-carousel-item:last-child,
 mat-dialog-container cn-carousel cn-carousel-item:last-child {
-  background-color: hsla(350, 50%, 60%, 0.75) !important;
+  //background-color: hsla(350, 50%, 60%, 0.75) !important;
+  background-color: var(--bg-core-surface-2-active)!important;
   margin-left: auto;
   border-radius: 0.45rem 0.45rem 0.45rem 0;
   &:hover {
-    background-color: hsl(350 50% 65% / 0.75) !important;
+    //background-color: hsl(350 50% 65% / 0.75) !important;
+    background-color: var(--bg-core-surface-2-active)!important;
+
   }
   @include breakpoint-down("sm") {
   border-radius: 0.45rem;
