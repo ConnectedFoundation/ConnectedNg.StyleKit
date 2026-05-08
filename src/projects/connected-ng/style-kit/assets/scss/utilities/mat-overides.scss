@@ -5,7 +5,8 @@
 :host {
   @include mat.table-overrides(
     (
-      row-item-outline-color: var(--mat-sys-outline-variant),
+      //row-item-outline-color: var(--mat-sys-outline-variant),
+      row-item-outline-color: var(--split-line)
     )
   );
 
@@ -68,6 +69,11 @@
 
 table.mat-mdc-table {
   background-color: transparent!important;
+}
+
+.mat-mdc-header-cell,
+.mat-mdc-cell {
+    border-bottom-color: var(--split-line)!important;
 }
 
 .warning .mat-badge-content {
