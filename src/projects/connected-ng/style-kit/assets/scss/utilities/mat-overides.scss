@@ -611,6 +611,39 @@ cf-navigation-list-item {
 }
 /*endselect*/
 
+
+/*mat sort*/
+.mat-sort{
+  font-size: .875em;
+}
+
+.mat-sort-header {
+  padding: .5em .5em;
+  cursor: pointer;
+  border-bottom: 1px solid var(--axis-line);
+  display: block;
+  &:last-child {
+    border-bottom: none;
+  }
+  &:hover {
+    background-color: light-dark(
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.1)  ) !important  ;
+  }
+}
+
+.mat-sort-header-arrow>svg, .mat-sort-header-arrow [matSortHeaderIcon] {
+  width: 16px!important;
+  height: 16px!important;
+  fill: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px!important;
+  transform: translateZ(0);
+}
+/*end mat sort*/
+
 /*mat-themes colors*/
 .success {
   @include mat.theme(
