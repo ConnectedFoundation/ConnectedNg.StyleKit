@@ -353,8 +353,8 @@ mat-dialog-container cn-carousel cn-carousel-item {
   }
 }
 
-cn-code-lists-view cn-carousel cn-carousel-item:first-child {
-  //border-radius: 0.6rem 0 0 0.6rem;
+cn-code-lists-view cn-carousel cn-carousel-item:only-child {
+   margin-left: initial!important;
 }
 
 cn-code-lists-view cn-carousel cn-carousel-item:last-child,

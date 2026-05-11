@@ -352,6 +352,14 @@ button[mat-icon-button] {
   }
 }
 
+.display-value .list-item-title{
+  font-weight: 400;
+}
+
+.display-value:first-of-type .list-item-title{
+  font-weight: 500;
+}
+
 .list-item-avatar {
   width: 2.5rem;
   height: 2.5rem;
