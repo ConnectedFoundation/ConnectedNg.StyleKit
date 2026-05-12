@@ -352,8 +352,13 @@ button[mat-icon-button] {
   }
 }
 
+.display-value:not(:last-child):not(:only-child) {
+    border-right: 1px solid var(--border-1);
+}
+
 .display-value .list-item-title{
   font-weight: 400;
+  padding-top: .2em;
 }
 
 .display-value:first-of-type .list-item-title{
