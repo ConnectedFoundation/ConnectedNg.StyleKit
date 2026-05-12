@@ -416,11 +416,11 @@ button[mat-icon-button] {
   display: inline-block;
   background-color: var(--bg-core-surface-2);
   color: var(--mat-sys-on-surface);
-  font-size: 0.75rem;
+  font-size: 0.75em;
   font-weight: 300;
   line-height: 1;
   border-radius: 0.35rem;
-  padding: 0.35rem 0.5rem;
+  padding: 0.25rem 0.4rem;
   border: 1px solid var(--border-1);
   &:empty {
     display: none;
@@ -592,9 +592,10 @@ mat-list-option[aria-selected="true"].selection-indicator-hidden {
 /*FIELDSET*/
 fieldset {
   border-radius: 0.65rem;
+  min-inline-size: 100%!important;
   border: 1px solid var(--mat-sys-outline);
   margin-bottom: 1rem;
-  padding-top: 0;
+  //padding-top: 0;
   padding-bottom: 0.85rem;
   min-inline-size: 100%;
   legend {
