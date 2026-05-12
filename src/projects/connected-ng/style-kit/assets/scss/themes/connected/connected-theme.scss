@@ -327,29 +327,7 @@
 
 /*test sticky*/
 /*how to mask content below sticky header without a solid background (i.e., match the page's background image)*/
-.sticky-wrapper-test {
-  background-color: transparent !important;
-  position: sticky;
-  //padding: .75rem 1rem!important;
-  top: 4.25rem;
-  // margin-bottom: 2rem;
-  //mask-image: linear-gradient(to top, #0000, #000 40%);
-  isolation: isolate;
-  z-index: 999;
 
-  &:before,
-  &:after {
-    content: "";
-    inset: -4.25rem -1rem 0 -1rem;
-    //inset:  0 ;
-    position: absolute;
-  }
-
-  &:before {
-    background: var(--mat-sys-background);
-    z-index: -2 !important;
-  }
-}
 
 .connected-theme .sticky-wrapper-test {
   background-color: transparent !important;

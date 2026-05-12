@@ -4,6 +4,30 @@
   top: 2rem;
 }
 
+
+.sticky-wrapper-test {
+  background-color: transparent;
+  position: sticky;
+  //padding: .75rem 1rem!important;
+  top: 4.25rem;
+  // margin-bottom: 2rem;
+  //mask-image: linear-gradient(to top, #0000, #000 40%);
+  isolation: isolate;
+  z-index: 999;
+
+  &:before {
+    content: "";
+    inset: -4.25rem -1rem 0 -1rem;
+    //inset:  0 ;
+    position: absolute;
+  }
+
+  &:before {
+    background: var(--mat-sys-background);
+    z-index: -2 !important;
+  }
+}
+
 .placeholder-container {
   padding: 1rem;
   border-radius: 0.5rem;
