@@ -373,8 +373,10 @@ mat-dialog-container cn-carousel cn-carousel-item:last-child {
   }
 }
 /*action-list*/
-fieldset:has(cn-code-list-update-form) {
+
+cn-code-lists-view fieldset:has(form) {
   background: var(--bg-core-surface-2);
+  padding-top: 1rem;
 }
 
 .cn-list-action-wrapper {
@@ -436,7 +438,7 @@ cn-code-list-actions-container cn-action-tile:last-child {
 cn-code-list-insert-form .grid,
 cn-code-list-update-form .grid {
   row-gap: 1.5rem;
-  align-items: center;
+  //align-items: center;
   font-weight: 500;
 }
 
@@ -590,10 +592,50 @@ cn-code-list-update-form .grid {
 .no-hover.mdc-list-item:hover::before {
   background-color: transparent !important;
 }
-
-cf-navigation-list-item {
+cf-navigation-list-item{
   display: contents;
+  }
+/*test-border*/
+ 
+.mdc-list-item--with-leading-avatar.mdc-list-item {
+  overflow: visible;
 }
+
+
+cf-navigation-list-item:not(cf-navigation-list-item cf-navigation-list-item){
+  display: inline;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-2);
+  
+}
+
+cf-navigation-list-item .mdc-list-item.mdc-list-item--with-one-line {
+    height: var(--mat-list-list-item-one-line-container-height, 46px);
+}
+
+
+
+mat-sidenav[style="width: 85px;"] mat-nav-list>cf-navigation-list-item:has(.nav-list)>mat-list-item {
+  opacity: .25; 
+}
+
+.mat-sidenav{
+  padding: 0!important;
+}
+
+.mat-drawer-inner-container {
+    padding: 1rem 1.125rem!important;
+}
+
+cf-navigation-list-item{
+  min-width: 48px!important;
+}
+
+.nav-list {
+  margin-top: .5rem;// move to navigation-list-item-css
+}
+
+/*end test-border*/
 /*end list-item*/
 
 /*select*/

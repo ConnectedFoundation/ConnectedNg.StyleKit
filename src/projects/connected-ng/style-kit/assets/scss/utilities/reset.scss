@@ -281,7 +281,8 @@ select {
 
   display: grid;
   gap: var(--grid-gap);
-
+  //row-gap: .5rem;
+  align-items: start;
   grid-template-columns: repeat(
     auto-fit,
     minmax(var(--grid-col-min-size-calc), 1fr)

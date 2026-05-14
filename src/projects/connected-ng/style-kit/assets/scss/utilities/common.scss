@@ -371,7 +371,9 @@ button[mat-icon-button] {
       position: absolute;
       bottom: -14px;
       left: 50%;
-      opacity: 0.2;
+      transform: translateX(-50%);
+      //opacity: 0.2;
+      color: var(--border-1);
     }
   }
 }
@@ -434,6 +436,14 @@ button[mat-icon-button] {
     line-height: 1.1;
     font-weight: 500;
   }
+}
+.list-item-label,
+.list-item-content,
+.list-item-title,
+.list-item-date,
+.list-item-value {
+  word-break: break-word;
+  white-space: normal;
 }
 
 .list-item-badge-text {
@@ -608,7 +618,7 @@ mat-list-option[aria-selected="true"].selection-indicator-hidden {
       animate-in linear forwards,
       animate-out linear forwards;
     animation-timeline: view();
-    animation-range: entry, 90%;
+    animation-range: entry, exit;
   }
 }
 /*END SCROLL DRIVEN ANIMATION*/
