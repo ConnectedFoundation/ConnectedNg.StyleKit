@@ -4,8 +4,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@connected-ng/StyleKit": [
-        "./dist/connected-ng/style-kit"
+      "@connected-ng/style-kit": [
+        "./projects/connected-ng/style-kit/src/public-api.ts"
       ]
     },
     "outDir": "./dist/out-tsc",
