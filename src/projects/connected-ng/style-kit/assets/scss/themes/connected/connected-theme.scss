@@ -647,6 +647,7 @@ body:has(.connected-theme) .mat-bottom-sheet-container {
 
 /*drop-downs*/
 .mat-datepicker-content,
+.mtx-datetimepicker-content,
 .mat-mdc-select-panel,
 .mat-mdc-autocomplete-panel,
 .mat-mdc-menu-panel,
@@ -674,6 +675,9 @@ body:has(.connected-theme) .mat-bottom-sheet-container {
     backdrop-filter: saturate(1.5);
   }
 }
+
+
+
 /*end drop-downs*/
 
 /*dialog*/
