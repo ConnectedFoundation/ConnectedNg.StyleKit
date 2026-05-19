@@ -67,6 +67,17 @@
   );
 }
 
+// mat-form-field.form-sm {
+//   @include mat.form-field-overrides((
+//     container-height: 28px,
+//     container-vertical-padding: 8px,
+//   ));
+// }
+
+::ng-deep .form-sm {
+    @include mat.form-field-density(-5);
+}
+
 table.mat-mdc-table {
   background-color: transparent!important;
 }

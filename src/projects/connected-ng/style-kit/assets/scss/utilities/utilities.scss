@@ -357,7 +357,7 @@
 	  @if $breakName != "" {
 		@media (min-width: $breakValue) {
 		  .w-#{$breakName}-#{$size} {
-			width: calc(#{$size} * 10%);
+			width: calc(#{$size} * 10%)!important;
 		  }
 		}
 	  } @else {
