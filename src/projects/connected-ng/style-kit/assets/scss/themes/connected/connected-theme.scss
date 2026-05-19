@@ -651,8 +651,7 @@ body:has(.connected-theme) .mat-bottom-sheet-container {
 .mat-mdc-select-panel,
 .mat-mdc-autocomplete-panel,
 .mat-mdc-menu-panel,
-.mat-timepicker-panel,
-.ng-dropdown-panel {
+.mat-timepicker-panel {
   --bg-core-surface-2-hover: light-dark(
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.1)
@@ -675,7 +674,25 @@ body:has(.connected-theme) .mat-bottom-sheet-container {
     backdrop-filter: saturate(1.5);
   }
 }
+.ng-dropdown-panel{
+ --bg-core-surface-2-hover: light-dark(
+    rgba(255, 255, 255, 0.5),
+    rgba(55, 55, 55, 0.5)
+  );
+  background: var(--bg-core-surface-2-hover) !important;
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        inset: 0;
+        border-radius: inherit;
+        backdrop-filter: blur(3px) url(#liquid-prism-intense) !important;
+  }
+}
 
+// .ng-dropdown-panel-items{
+//   background: var(--bg-core-surface-2-hover) !important;
+// }
 
 
 /*end drop-downs*/
