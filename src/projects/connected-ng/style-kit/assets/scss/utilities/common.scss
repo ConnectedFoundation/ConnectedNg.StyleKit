@@ -703,14 +703,14 @@ fieldset:only-child {
 }
 /*STATUS DOT*/
 
-// .main-layout-content:has(.main-layout-fab) .bottom-spacer {
-//   padding-bottom: 3.5rem;
-// }
-.main-layout-content:has(.main-layout-fab) > * {
+.main-layout-content:has(.main-layout-fab) .bottom-spacer {
   padding-bottom: 3.5rem;
-  display: block;
 }
-.main-layout-content:has(.main-layout-fab[style="display: none;"]) > * {
-  padding-bottom: 0.5rem;
+// .main-layout-content:has(.main-layout-fab) > * {
+//   padding-bottom: 3.5rem;
+//   display: block;
+// }
+// .main-layout-content:has(.main-layout-fab[style="display: none;"]) > * {
+//   padding-bottom: 0.5rem;
 
-}
+// }
