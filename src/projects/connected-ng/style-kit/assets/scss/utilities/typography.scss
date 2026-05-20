@@ -88,6 +88,13 @@ mat-checkbox:has([readonly="true"]) {
   }
 }
 
+
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input::-webkit-input-placeholder {
+  font-weight: initial!important;
+}
+
+
 .display-only {
   pointer-events: none !important;
   &
