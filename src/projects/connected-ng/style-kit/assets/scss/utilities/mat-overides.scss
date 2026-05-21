@@ -667,11 +667,11 @@ cf-navigation-list-item{
 
 
 /*mat sort*/
-.mat-sort{
+fieldset .mat-sort{
   font-size: .75em;
 }
 
-.mat-sort-header {
+fieldset .mat-sort-header {
   padding: .5em .5em;
   cursor: pointer;
   border-bottom: 1px solid var(--axis-line);
