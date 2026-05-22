@@ -702,6 +702,32 @@ fieldset:only-child {
   margin: 0.15rem 0.45rem 0 0.05rem;
   background-color: var(--mat-sys-primary);
   flex: 0 0 auto;
+  position: relative;
+  cursor: default;
+
+  &[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--mat-sys-inverse-surface, #313033);
+    color: var(--mat-sys-inverse-on-surface, #f4eff4);
+    font-size: 0.7rem;
+    font-weight: 400;
+    white-space: nowrap;
+    padding: 3px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 1000;
+    line-height: 1.5;
+  }
+
+  &[data-tooltip]:hover::after {
+    opacity: 1;
+  }
 }
 .status-bg {
   width: 100%;
