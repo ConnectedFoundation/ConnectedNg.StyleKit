@@ -643,7 +643,10 @@ cn-code-list-update-form .grid {
 .no-hover.mdc-list-item:hover::before {
   background-color: transparent !important;
 }
-cf-navigation-list-item{
+cf-navigation-list-item {
+  display: contents;
+  }
+cf-navigation-list-item a{
   display: contents;
   }
 /*test-border*/
@@ -667,6 +670,9 @@ cf-navigation-list-item .mdc-list-item.mdc-list-item--with-one-line {
 
 
 mat-sidenav[style="width: 85px;"] mat-nav-list>cf-navigation-list-item:has(.nav-list)>mat-list-item {
+  opacity: .25; 
+}
+mat-sidenav[style="width: 85px;"] mat-nav-list>cf-navigation-list-item a:has(.nav-list)>mat-list-item {
   opacity: .25; 
 }
 
