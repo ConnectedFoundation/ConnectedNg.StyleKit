@@ -263,6 +263,7 @@ mat-label {
 //     display: none;
 // }
 
+/*event wizard*/
 .main-layout-content {
   //height: calc(100% - 72px);
   cf-main-layout-content {
@@ -283,6 +284,40 @@ mat-label {
     }
   }
 }
+/*end event wizard*/
+/*event merge*/
+.main-layout-content { 
+  cf-main-layout-content {
+    krka-event-dashboard, krka-report-confirmation-view{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      // .mat-selection-list {
+      //   margin-bottom: 28px;
+      //   flex: 1 0 calc(100vh - 175px);
+      //   @include breakpoint-down("md") {
+      //     margin-bottom: 82px;
+      //   }
+      // }
+    }
+  }
+}
+/*end event merge*/
+/*plan merge*/
+.main-layout-content { 
+  cf-main-layout-content {
+    krka-planning-scheduler, krka-evidence-view, krka-audit-trail-change-report-details{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+ 
+    }
+  }
+}
+krka-plan-list-item-merger {
+    display: contents;
+}
+/*end plan merge*/
 
 .main-layout-content {
   height: calc(100% - 64px);
