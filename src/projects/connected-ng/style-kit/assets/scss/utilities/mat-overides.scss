@@ -82,6 +82,10 @@ table.mat-mdc-table {
   background-color: transparent!important;
 }
 
+table.mat-mdc-table td {
+  word-break: break-word;
+}
+
 .mat-mdc-header-cell,
 .mat-mdc-cell {
     border-bottom-color: var(--split-line)!important;
