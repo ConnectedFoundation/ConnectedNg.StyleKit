@@ -425,7 +425,7 @@ mat-dialog-container cn-carousel cn-carousel-item:last-child {
 /*action-list*/
 
 cn-code-lists-view fieldset:has(form),
-cn-code-lists-view fieldset:has(mat-form-field){
+cn-code-lists-view fieldset:has(mat-form-field1){
   background: var(--bg-core-surface-2);
   padding-top: 1rem;
 }
