@@ -306,7 +306,7 @@ mat-label {
 /*plan merge*/
 .main-layout-content { 
   cf-main-layout-content {
-    krka-planning-scheduler, krka-evidence-view, krka-audit-trail-change-report-details{
+    krka-planning-scheduler, krka-evidence-view, krka-audit-trail-change-report-details, krka-alarm-threshold-manual-comparison{
       height: 100%;
       display: flex;
       flex-direction: column;
