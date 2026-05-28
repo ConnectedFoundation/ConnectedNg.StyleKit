@@ -323,6 +323,12 @@ krka-plan-list-item-merger {
   height: calc(100% - 64px);
 }
 
+/*menu panel*/
+.mat-mdc-menu-panel{
+  border-radius: .65rem!important;
+}
+/*end menu panel*/
+
 /*code-list*/
 cn-action-bar-component {
   //height: calc(100vh - 124px) !important;
