@@ -404,19 +404,22 @@ button[mat-icon-button] {
   font-size: 0.75rem;
   color: var(--text-secondary);
   line-height: 1.35;
+
 }
 
 .list-item-content {
   font-size: 0.75rem;
-  line-height: 1.35;
+  //line-height: 1.35;
+  line-height: 1.5;
   font-weight: 500;
 }
 
 .list-item-title {
   font-size: 14px;
   font-weight: 500;
-  line-height: 1.25;
-  padding-bottom: 0.25rem;
+  //line-height: 1.25;
+  line-height: 1.5;
+  //padding-bottom: 0.25rem;
 }
 
 .list-item-date {
@@ -427,7 +430,8 @@ button[mat-icon-button] {
 
 .list-item-value {
   font-size: 0.875rem !important;
-  line-height: 1.25;
+  //line-height: 1.25;
+  line-height: 1.5;
 
   &.lg {
     font-size: 1.5rem !important;
