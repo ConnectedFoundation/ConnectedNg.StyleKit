@@ -579,13 +579,13 @@ mat-list-option[aria-selected="true"] {
   &.bg-warning {
     background-color: light-dark(
       hsl(25, 100%, 75%, 0.35),
-      hsl(25, 100%, 75%, 0.2)
+      hsl(25, 75%, 75%, 0.65)
     ) !important;
   }
   &.bg-danger {
     background-color: light-dark(
       hsl(0, 100%, 75%, 0.35),
-      hsl(0, 100%, 75%, 0.2)
+      hsl(0, 75%, 75%, 0.65)
     ) !important;
     //background-color: light-dark(oklch(from $red l c h / 50%), oklch(from $red l c h / 50%)) !important;
   }
