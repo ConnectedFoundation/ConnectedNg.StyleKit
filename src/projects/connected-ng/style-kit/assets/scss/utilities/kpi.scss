@@ -1,4 +1,8 @@
 /*KPI*/
+:root{
+--mat-sys-outline-variant: var(--mat-sys-outline)!important;
+}
+
 .kpi {
   height: 100%;
   position: relative;
