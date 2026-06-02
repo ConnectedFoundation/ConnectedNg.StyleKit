@@ -851,14 +851,31 @@ mat-icon {
 /*test input redonly*/
 
 /*mtx-overides*/
+.ng-dropdown-panel{
+  background-color: var(--mat-sys-surface) !important ;
+}
+
 .ng-select .ng-select-container,
 .ng-select .ng-clear-wrapper,
 .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
   color: var(--mat-sys-on-surface) !important;
 }
 
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  font-size: .875em;
+}
+
+.ng-dropdown-panel .ng-optgroup {
+  padding: 4px 16px !important;
+  font-weight: 400 !important;
+  font-size: .75em !important;
+  opacity: .7;
+}
+
 .ng-select .ng-select-container {
   align-items: baseline !important;
+  gap: .5rem;
+  padding-right: .35rem;
 }
 
 .ng-select .ng-arrow {

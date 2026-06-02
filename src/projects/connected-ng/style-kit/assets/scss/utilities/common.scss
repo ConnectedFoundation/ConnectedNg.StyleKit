@@ -751,6 +751,11 @@ fieldset:only-child {
 .main-layout-content:has(.main-layout-fab) .bottom-spacer {
   padding-bottom: 3.5rem;
 }
+
+.main-layout-content:has(.main-layout-fab) fieldset .bottom-spacer {
+  padding-bottom: 0rem;
+}
+
 // .main-layout-content:has(.main-layout-fab) > * {
 //   padding-bottom: 3.5rem;
 //   display: block;
