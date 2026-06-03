@@ -15,22 +15,39 @@ export class ThemeService {
     }
 
     applyColorSchemeEffect = effect(() => {
-        const darkMode = this.isDarkMode();
+        // Track both signals so the scheme is re-applied when theme changes too.
+        this.isDarkMode();
+        this.selectedTheme();
 
         this.applyColorScheme();
     });
 
     applyColorScheme() {
         const darkMode = this.isDarkMode();
-        const themeElement = document.querySelector('.connected-theme');
-        if (themeElement) {
-            if (darkMode) {
-                themeElement.classList.add('dark-mode');
-                document.documentElement.style.colorScheme = 'dark';
-            } else {
-                themeElement.classList.remove('dark-mode');
-                document.documentElement.style.colorScheme = 'light dark';
+        const selected = this.selectedTheme();
+        const themeClass = selected?.class?.trim();
+        const themeElement: Element | null = themeClass
+            ? document.querySelector('.' + themeClass)
+            : document.documentElement;
+
+        if (!themeElement) {
+            return;
+        }
+
+        // Clear dark-mode from any previously themed element so it doesn't linger
+        // when switching themes.
+        document.querySelectorAll('.dark-mode').forEach(el => {
+            if (el !== themeElement) {
+                el.classList.remove('dark-mode');
             }
+        });
+
+        if (darkMode) {
+            themeElement.classList.add('dark-mode');
+            document.documentElement.style.colorScheme = 'dark';
+        } else {
+            themeElement.classList.remove('dark-mode');
+            document.documentElement.style.colorScheme = 'light dark';
         }
     }
 
