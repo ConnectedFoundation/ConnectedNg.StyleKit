@@ -19,7 +19,9 @@ export class ThemeService {
         this.isDarkMode();
         this.selectedTheme();
 
-        this.applyColorScheme();
+        // Defer to the next microtask so Angular has a chance to apply the new
+        // theme class on the wrapper element before we query for it.
+        queueMicrotask(() => this.applyColorScheme());
     });
 
     applyColorScheme() {
@@ -30,17 +32,21 @@ export class ThemeService {
             ? document.querySelector('.' + themeClass)
             : document.documentElement;
 
-        if (!themeElement) {
-            return;
-        }
-
-        // Clear dark-mode from any previously themed element so it doesn't linger
-        // when switching themes.
+        // Clear dark-mode from any previously themed element (and from
+        // documentElement when a non-default theme is active) so it doesn't
+        // linger when switching themes.
         document.querySelectorAll('.dark-mode').forEach(el => {
             if (el !== themeElement) {
                 el.classList.remove('dark-mode');
             }
         });
+        if (themeClass) {
+            document.documentElement.classList.remove('dark-mode');
+        }
+
+        if (!themeElement) {
+            return;
+        }
 
         if (darkMode) {
             themeElement.classList.add('dark-mode');
