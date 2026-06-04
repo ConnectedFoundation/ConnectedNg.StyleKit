@@ -861,6 +861,10 @@ mat-icon {
   color: var(--mat-sys-on-surface) !important;
 }
 
+.ng-select .ng-clear-wrapper{
+  height: 1.25rem !important;
+}
+
  .ng-select .ng-clear {   
     font-size: 20px!important;  
     pointer-events: none;
