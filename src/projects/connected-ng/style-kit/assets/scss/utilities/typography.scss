@@ -27,6 +27,22 @@
 //   }
 // }
 
+.mat-form-field-disabled button,
+.mat-form-field-disabled .ng-arrow-wrapper {
+  opacity: 0.4;
+  pointer-events: none !important;
+  cursor: default;
+  & *:hover,
+  & *:focus-visible,
+  & *:focus {
+    opacity: 0.4;
+    pointer-events: none !important;
+  }
+
+
+}
+
+
 mat-form-field.read-only,
 mat-form-field:has([readonly]),
 mat-form-field:has([readonly="true"]) {
