@@ -919,4 +919,15 @@ mat-form-field:has([readonly="true"]) {
     opacity:.8!important;
   }
 }
-/*edn mtx-overides*/
+
+/*mtx datetimepicker*/
+.mtx-datetimepicker-content .mtx-calendar {
+    height: auto!important;
+    padding-bottom: 1rem;
+}
+
+.mtx-calendar-header {
+    border-bottom: none!important;
+  }
+/*end mtx datetimepicker*/
+/*end mtx-overides*/
