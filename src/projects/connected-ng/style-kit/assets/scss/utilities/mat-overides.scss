@@ -861,6 +861,12 @@ mat-icon {
   color: var(--mat-sys-on-surface) !important;
 }
 
+ .ng-select .ng-clear {   
+    font-size: 20px!important;  
+    pointer-events: none;
+    font-weight: 300!important;
+  }
+
 .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
   font-size: .875em;
 }
