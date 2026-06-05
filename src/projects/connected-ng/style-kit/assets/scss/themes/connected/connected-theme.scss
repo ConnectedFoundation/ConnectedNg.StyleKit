@@ -594,12 +594,12 @@ mat-list-option[aria-selected="true"] {
     --border-2: hsl(140, 50%, 75%, 0.25) !important;
   }
   &.b-c-warning::after {
-    --border-1: hsl(25, 100%, 75%, 0.5) !important;
-    --border-2: hsl(25, 100%, 75%, 0.25) !important;
+    --border-1: light-dark(hsl(25, 100%, 65%, 0.9), hsl(25, 100%, 75%, 0.7)) !important;
+    --border-2: light-dark(hsl(25, 100%, 65%, 0.75), hsl(25, 100%, 75%, 0.55)) !important;
   }
   &.b-c-danger::after {
-    --border-1: hsl(0, 100%, 75%, 0.5) !important;
-    --border-2: hsl(0, 100%, 75%, 0.25) !important;
+    --border-1: light-dark(hsl(0, 100%, 65%, 0.9), hsl(0, 100%, 75%, 0.7)) !important;
+    --border-2: light-dark(hsl(0, 100%, 65%, 0.75), hsl(0, 100%, 75%, 0.55)) !important;
   }
 }
 /*end list-item*/
