@@ -8,6 +8,9 @@
     },
     "./themes/connected": {
       "sass": "./assets/scss/themes/connected/connected-theme.scss"
+    },
+    "./themes/business": {
+      "sass": "./assets/scss/themes/connected/business-theme.scss"
     }
   }
 }

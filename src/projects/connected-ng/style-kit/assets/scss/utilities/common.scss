@@ -90,6 +90,8 @@
   right: 0px !important;
   width: 100% !important;
   pointer-events: none;
+  z-index: 2;
+
   /* margin-inline: auto; */
 
   @media only screen and (max-width: 958px) {

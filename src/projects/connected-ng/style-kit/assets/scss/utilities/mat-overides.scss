@@ -363,7 +363,7 @@ cn-floating-action-bar {
   left: 1rem;
   right: 1rem;
   margin-top: auto;
-  z-index: 1;
+  z-index: 2;
   background: var(--bg-core-surface-2-hover) !important;
   &::before {
     content: "";
@@ -947,5 +947,10 @@ mat-form-field:has([readonly="true"]) {
 .mtx-calendar-header {
     border-bottom: none!important;
   }
+
+.mtx-calendar-body-cell.mtx-calendar-body-active .mtx-calendar-body-cell-content {
+    background: none!important;
+}
+
 /*end mtx datetimepicker*/
 /*end mtx-overides*/
