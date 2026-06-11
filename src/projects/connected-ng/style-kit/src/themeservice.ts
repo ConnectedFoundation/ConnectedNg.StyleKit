@@ -11,6 +11,7 @@ export class ThemeService {
     constructor() {
         this.registerTheme({ class: '', displayName: 'Default' });
         this.registerTheme({ class: 'connected-theme', displayName: 'Connected' });
+        this.registerTheme({ class: 'business-theme', displayName: 'Business' });
         this.selectTheme(this.Themes[0]);
     }
 

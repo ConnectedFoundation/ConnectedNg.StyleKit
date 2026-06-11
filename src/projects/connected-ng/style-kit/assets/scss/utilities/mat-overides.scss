@@ -951,6 +951,10 @@ mat-form-field:has([readonly="true"]) {
 .mtx-calendar-body-cell.mtx-calendar-body-active .mtx-calendar-body-cell-content {
     background: none!important;
 }
+.mtx-calendar-body-cell:hover .mtx-calendar-body-cell-content:not(.mtx-calendar-body-today):not(.mtx-calendar-body-selected) {
+    background: color-mix(in srgb, var(--mat-sys-on-surface) 5%, transparent)!important;
+    
+}
 
 /*end mtx datetimepicker*/
 /*end mtx-overides*/
