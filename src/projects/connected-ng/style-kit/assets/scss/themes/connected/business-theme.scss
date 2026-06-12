@@ -4,8 +4,9 @@
 /* Seed Typography: plain-font-family: Roboto, brand-font-family: Roboto, bold-font-weight: 700, medium-font-weight: 500, regular-font-weight: 400 */
 
 
-
 @use "@angular/material" as mat;
+//@use "sass:math";
+//@import "../../utilities/variables.scss";
 
 
 .business-theme,
@@ -27,7 +28,7 @@ html:has(.business-theme){
 --text-secondary: light-dark(hsl(209, 61%, 16%, .7), rgba(255,255,255,.65));
 --bg-core-surface-2: light-dark(hsl(60deg 17% 97% / 75%), rgba(255,255,255,.025));
 --bg-core-surface-2-hover: light-dark(hsl(60deg 17% 97% / 85%), rgba(255,255,255,.05));
---bg-core-surface-2-active: light-dark(hsl(60deg 17% 97% / 95%), rgba(255,255,255,.075));
+--bg-core-surface-2-active: light-dark(hsl(60deg 17% 92% / 95%), rgba(255,255,255,.075));
 --border-1: light-dark(hsl(209deg 61% 16% / 20%), rgba(255, 255, 255, 0.075));
 --border-2: light-dark(hsl(209deg 61% 16% / 10%), rgba(200, 200, 205, 0.05));
 --mat-sys-hover-state-layer-opacity: 0.02;
@@ -245,3 +246,15 @@ html:has(.business-theme) .mat-mdc-fab {
     
 }
 /*end fab*/
+
+/*stepper*/
+.business-theme .mat-vertical-content,
+html:has(.business-theme) .mat-vertical-content {
+    --mat-sys-surface-container-low: light-dark(hsl(60deg 17% 96% / 1), rgba(255,255,255,.025))!important;
+}
+
+.business-theme .mat-step-header[aria-selected=true], 
+.business-theme .mat-step-header[aria-expanded=true] {
+    --mat-sys-surface-container-low: light-dark(hsl(60deg 17% 96% / 1), rgba(255,255,255,.025)) !important;
+}
+/*end stepper*/
