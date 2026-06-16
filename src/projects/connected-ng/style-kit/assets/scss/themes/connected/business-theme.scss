@@ -19,18 +19,18 @@ html:has(.business-theme) {
 
 /* Light Theme */
 html:has(.business-theme){
-    background-color: #FAFAF8 !important;
+    background-color: light-dark( #FAFAF8, #102A43) !important;
 }
 
 .business-theme,
 html:has(.business-theme){
 
 --text-secondary: light-dark(hsl(209, 61%, 16%, .7), rgba(255,255,255,.65));
---bg-core-surface-2: light-dark(hsl(60deg 17% 97% / 75%), rgba(255,255,255,.025));
+--bg-core-surface-2: light-dark(hsl(60deg 17% 97% / 75%), rgba(255,255,255,.01));
 --bg-core-surface-2-hover: light-dark(hsl(60deg 17% 97% / 85%), rgba(255,255,255,.05));
 --bg-core-surface-2-active: light-dark(hsl(60deg 17% 92% / 95%), rgba(255,255,255,.075));
---border-1: light-dark(hsl(209deg 61% 16% / 20%), rgba(255, 255, 255, 0.075));
---border-2: light-dark(hsl(209deg 61% 16% / 10%), rgba(200, 200, 205, 0.05));
+--border-1: light-dark(hsl(209deg 61% 16% / 20%), rgba(54, 72, 95, 0.5));
+--border-2: light-dark(hsl(209deg 61% 16% / 10%), rgba(54, 72, 95, 0.35));
 --mat-sys-hover-state-layer-opacity: 0.02;
 --mat-sys-focus-state-layer-opacity: 0.04;
 
@@ -226,7 +226,7 @@ html:has(.business-theme.dark-mode) {
 
 /*sidenav*/
 .business-theme .mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated {
-    background-color: var(--mat-sys-primary) !important;
+    background-color: light-dark(var(--mat-sys-primary), #fafaf8) !important;
     color: var(--mat-sys-on-primary) !important;
 }
 .business-theme .mdc-list-item--with-leading-icon .mdc-list-item__start {
@@ -240,7 +240,7 @@ html:has(.business-theme.dark-mode) {
 /*fab*/
 .business-theme .mat-mdc-fab,
 html:has(.business-theme) .mat-mdc-fab {
-    background-color: #102A43!important;
+    background-color: light-dark(#102A43, #b0c9e8)!important;
     color: var(--mat-sys-on-primary) !important;
     
 }

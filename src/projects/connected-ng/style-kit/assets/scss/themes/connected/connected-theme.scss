@@ -533,8 +533,9 @@
 //end button
 
 //toggle button
-.mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+.connected-theme .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
   background-color: var(--bg-core-surface-2-active) !important;
+  color: initial!important;
 }
 //end toggle button
 

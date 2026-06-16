@@ -795,6 +795,13 @@ fieldset .mat-sort-header {
   font-size: var(--mat-icon-button-icon-size, 16px) !important;
 }
 
+/*mat-button-toggle*/
+.mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+    background-color: var(--mat-sys-primary)!important;
+    color: var(--mat-sys-on-primary)!important;
+}
+/*end mat-button-toggle*/
+
 /*Material symbols */
 mat-icon {
   font-variation-settings:
