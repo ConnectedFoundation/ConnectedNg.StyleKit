@@ -650,6 +650,12 @@ cn-code-list-update-form .grid {
 /*end mat-drawer-end*/
 
 /*list-item*/
+
+krka-event-linked-items krka-event-list-item:not(krka-event-list-item:last-child):not(krka-event-list-item:only-child){
+    border-bottom: 1px solid var(--mat-sys-outline);
+    display: block;
+}
+
 .mdc-list-item.mdc-list-item--disabled::before {
   background-color: transparent !important;
 }
@@ -898,9 +904,14 @@ mat-icon {
 }
 
 .ng-select .ng-select-container {
-  align-items: baseline !important;
+  //align-items: baseline !important;
   gap: .5rem;
-  padding-right: .35rem;
+  //padding-right: .35rem;
+}
+
+.mat-mdc-form-field-icon-suffix, 
+[dir=rtl] .mat-mdc-form-field-icon-prefix {
+  padding: 0 0 0 .35rem!important;
 }
 
 .ng-select .ng-arrow {
