@@ -254,3 +254,109 @@ code,
   font-size: var(--fs-font-code);
 }
 /*END FLUID FONT SIZE*/
+
+
+markdown {
+--fs-font-base:.875rem;
+
+  font-size: var(--fs-font-base);
+  line-height: 1.5;
+  color: var(--text-core);
+  hr{
+    color: var(--mat-sys-outline);
+    border-style: solid;
+    border-width: .5px;
+  }
+  h1{
+    font-size: var(--fs-font-h3);
+    margin-top: .85rem;
+    margin-bottom: .25rem;
+    color: var(--text-hover);
+    font-weight: 500;
+  }
+  h1:first-child{
+    margin-top: 0;
+  }
+  h2{
+    font-size: var(--fs-font-h4);
+    margin-top: .85rem;
+    margin-bottom: .25rem;
+    color: var(--text-hover);
+    font-weight: 500;
+  }
+    h2:first-child{
+    margin-top: 0;
+  }
+  h3{
+    font-size: var(--fs-font-h6);
+    margin-top: .85rem;
+    margin-bottom: .25rem;
+    color: var(--text-hover);
+    font-weight: 500;
+  }
+  h4{
+    font-size: 1rem;
+    margin-top: .85rem;
+    margin-bottom: .25rem;
+    color: var(--text-hover);
+    font-weight: 500;
+  }
+  ul, ol{
+    font-size: var(--fs-font-base);
+    padding-inline-start: 1.5em;
+    margin-block-start: .25em;
+    margin-block-end: .25em;
+    li {
+    padding-bottom: .25em;
+  }
+  }
+  a {
+  --currentColor: var(--mat-sys-on-surface);
+  --opacity: 0.5;
+  color: var(--currentColor);
+  text-decoration: none;
+  background-image: linear-gradient(
+    to right,
+    var(--currentColor) 50%,
+    color-mix(in lab, transparent 75%, var(--currentColor)) 50%
+  );
+  background-size: 200% 1px;
+  background-repeat: no-repeat;
+  background-position: 100% 97%;
+  white-space: pre;
+  transition: background-position 0.3s;
+}
+a:hover,
+a:focus,
+a:active,
+a.active {
+  background-position: 0% 97%;
+  cursor: pointer;
+  transition: background-position 0.3s;
+}
+
+.markdown-alert {  
+  background-color: var(--bg-core-surface-2);
+  color: var(--text-core);
+  border: 1px solid var(--mat-sys-outline);
+  padding: .5em 1em;
+  border-radius: .65rem;
+  margin-block: 0.5em;
+    & .markdown-alert-title {
+      font-weight: 600;
+      opacity: 0.8;
+    }
+    &.markdown-alert-note{
+     border: 1px solid color-mix(in srgb, var(--chart-blue) 40%, transparent);
+    }
+    &.markdown-alert-warning{
+     border: 1px solid color-mix(in srgb, var(--chart-orange) 40%, transparent);
+    }
+    &.markdown-alert-important{
+     border: 1px solid color-mix(in srgb, var(--chart-red) 40%, transparent);
+    }
+    &.markdown-alert-tip{
+     border: 1px solid color-mix(in srgb, var(--chart-green) 40%, transparent);
+    }
+  }
+}
