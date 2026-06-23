@@ -24,6 +24,10 @@
     }
 }
 
+.timeline-100vh .timeline {
+  max-height: calc(100vh - 155px);
+}
+
 .timeline {
   position: relative;
   list-style: none;
