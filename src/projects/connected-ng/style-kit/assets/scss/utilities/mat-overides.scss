@@ -401,7 +401,8 @@ mat-dialog-content cn-floating-action-bar{
 }
 
 cn-code-lists-view cn-carousel cn-carousel-item,
-mat-dialog-container cn-carousel cn-carousel-item {
+mat-dialog-container cn-carousel cn-carousel-item,
+krka-user-manual-view cn-carousel cn-carousel-item{
   padding: 0.5rem 1em;
   border-radius: 0.45rem;
   background-color: var(--bg-core-surface-2);
@@ -417,12 +418,14 @@ mat-dialog-container cn-carousel cn-carousel-item {
   }
 }
 
-cn-code-lists-view cn-carousel cn-carousel-item:only-child {
-   margin-left: initial!important;
+cn-code-lists-view cn-carousel cn-carousel-item:only-child,
+krka-user-manual-view cn-carousel cn-carousel-item:only-child  {
+   margin-left: initial!important; 
 }
 
 cn-code-lists-view cn-carousel cn-carousel-item:last-child,
-mat-dialog-container cn-carousel cn-carousel-item:last-child {
+mat-dialog-container cn-carousel cn-carousel-item:last-child,
+krka-user-manual-view cn-carousel cn-carousel-item:last-child {
   //background-color: hsla(350, 50%, 60%, 0.75) !important;
   background-color: var(--bg-core-surface-2-active)!important;
   margin-left: auto;

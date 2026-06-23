@@ -591,8 +591,8 @@ mat-list-option[aria-selected="true"] {
     //background-color: light-dark(oklch(from $red l c h / 50%), oklch(from $red l c h / 50%)) !important;
   }
   &.b-c-success::after {
-    --border-1: hsl(140, 50%, 75%, 0.5) !important;
-    --border-2: hsl(140, 50%, 75%, 0.25) !important;
+    --border-1: light-dark(hsl(140, 50%, 75%, 0.9), hsl(140, 50%, 75%, 0.7)) !important;
+    --border-2: light-dark(hsl(140, 50%, 75%, 0.75), hsl(140, 50%, 75%, 0.55)) !important;
   }
   &.b-c-warning::after {
     --border-1: light-dark(hsl(25, 100%, 65%, 0.9), hsl(25, 100%, 75%, 0.7)) !important;
@@ -711,6 +711,7 @@ body:has(.connected-theme) .mat-mdc-dialog-surface {
   // backdrop-filter: blur(0.75rem) !important;
   border: 1px solid var(--border-1);
   position: relative;
+  background-color: transparent !important;
   &::before {
     content: "";
     position: absolute;
