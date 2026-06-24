@@ -65,6 +65,7 @@ mat-form-field:has([readonly="true"]) {
     pointer-events: none !important;
   }
   & input,
+  & .mat-mdc-input-element, 
   & mat-select,
   & mtx-select {
     // pointer-events: all !important;
@@ -323,7 +324,7 @@ markdown {
   background-size: 200% 1px;
   background-repeat: no-repeat;
   background-position: 100% 97%;
-  white-space: pre;
+  white-space: pre-line;
   transition: background-position 0.3s;
 }
 a:hover,
