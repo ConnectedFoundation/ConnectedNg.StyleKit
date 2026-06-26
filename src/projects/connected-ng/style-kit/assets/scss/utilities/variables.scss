@@ -17,6 +17,8 @@
     rgba(0, 0, 0, 0.05),
     rgba(255, 255, 255, 0.05)
   );
+  //--text-hover: light-dark(rgba(0, 0, 0, 1), rgba(255, 255, 255, 1)) ;
+  --text-hover: var(--mat-sys-on-surface);
 }
 
 /*VAR*/

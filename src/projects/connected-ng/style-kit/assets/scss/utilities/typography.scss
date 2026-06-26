@@ -27,6 +27,16 @@
 //   }
 // }
 
+a.mdc-list-item--disabled,
+a.mdc-list-item--disabled *{
+    pointer-events: none !important;
+   
+}
+
+// .mdc-text-field--disabled .mdc-text-field__input {
+// color: color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent)!important;
+// }
+
 .mat-form-field-disabled button,
 .mat-form-field-disabled .ng-arrow-wrapper {
   opacity: 0.4;
@@ -70,6 +80,7 @@ mat-form-field:has([readonly="true"]) {
   & mtx-select {
     // pointer-events: all !important;
     opacity: 0.8 !important;
+    color: inherit !important;
   }
   & mat-icon,
   .mat-mdc-form-field-icon-suffix,
