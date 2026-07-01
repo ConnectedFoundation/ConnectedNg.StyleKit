@@ -329,9 +329,13 @@ button[mat-icon-button] {
     outline: 1px dashed var(--mat-sys-secondary);
     outline-offset: 2px;
   }
-  &:last-child {
+  &:last-child { 
     margin-bottom: 0 !important;
   }
+  &.missing-comment {
+  outline: 1px dashed var(--chart-red) !important; 
+  outline-offset: 2px;
+}
 }
 .list-item-container {
   padding: 0.75rem 1rem !important;
