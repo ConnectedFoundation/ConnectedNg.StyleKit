@@ -1,3 +1,21 @@
+:root {
+  @include mat.theme-overrides(
+    (
+      secondary-container: light-dark(
+          rgba(255, 255, 255, 0.15),
+          rgba(255, 255, 255, 0.035)
+        ),
+      outline: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1)),
+      outline-variant: light-dark(
+          rgba(255, 255, 255, 0.15),
+          rgba(255, 255, 255, 0.075)
+        ),
+
+    )
+  );
+}
+
+
 @media (prefers-color-scheme: dark) {
   ::ng-deep .logo {
     filter: hue-rotate(155deg) invert(1)
@@ -31,6 +49,9 @@
     inset: -4.25rem -1rem 0 -1rem;
     //inset:  0 ;
     position: absolute;
+     @include breakpoint-down('md'){
+	    inset: -4.25rem -.25rem 0 -1rem;
+    }
   }
 
   &:before {
@@ -667,6 +688,7 @@ fieldset {
   legend {
     padding-inline: 0.35rem;
     font-weight: 500;
+    opacity: 0.85;
   }
 }
 

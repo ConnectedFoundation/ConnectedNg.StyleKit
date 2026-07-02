@@ -1,8 +1,10 @@
 @use "sass:math";
 @use "@angular/material" as mat;
 @import "../../utilities/variables.scss";
+//@import "../../utilities/breakpoints.scss";
+@import "../../utilities/functions.scss";
 
-:root {
+:root .connected-theme {
   @include mat.theme-overrides(
     (
       secondary-container: light-dark(
@@ -345,6 +347,9 @@
     inset: -4.25rem -1rem 0 -1rem;
     //inset:  0 ;
     position: absolute;
+      @include breakpoint-down('md'){
+	    inset: -4.25rem -.25rem 0 -1rem;
+    }
   }
 
   &:before {
@@ -639,7 +644,8 @@ body:has(.connected-theme) .mat-bottom-sheet-container {
     rgba(255, 255, 255, 0.1)
   );
   background-color: var(--bg-core-surface-2-hover) !important;
-  backdrop-filter: blur(0.5rem) url(#liquid-prism-intense) !important;
+  backdrop-filter: blur(0.5rem) !important;
+ // backdrop-filter: blur(0.5rem) url(#liquid-prism-intense) !important;
   border-top-left-radius: 1rem !important;
   border-top-right-radius: 1rem !important;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -647,18 +653,19 @@ body:has(.connected-theme) .mat-bottom-sheet-container {
 /*end bottom-sheet*/
 
 /*drop-downs*/
-.mat-datepicker-content,
-.mtx-datetimepicker-content,
-.mat-mdc-select-panel,
-.mat-mdc-autocomplete-panel,
-.mat-mdc-menu-panel,
-.mat-timepicker-panel,
-.ng-dropdown-panel {
+body:has(.connected-theme) .mat-datepicker-content,
+body:has(.connected-theme) .mtx-datetimepicker-content,
+body:has(.connected-theme) .mat-mdc-select-panel,
+body:has(.connected-theme) .mat-mdc-autocomplete-panel,
+body:has(.connected-theme) .mat-mdc-menu-panel,
+body:has(.connected-theme) .mat-timepicker-panel,
+body:has(.connected-theme) .ng-dropdown-panel {
   --bg-core-surface-2-hover: light-dark(
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.1)
   );
-  backdrop-filter: blur(0.75rem) url(#liquid-prism-intense) !important;
+  backdrop-filter: blur(0.75rem) !important;
+  //backdrop-filter: blur(0.75rem) url(#liquid-prism-intense) !important;
   background: var(--bg-core-surface-2-hover) !important;
   border: 1px solid var(--border-1) !important;
   &::before {
