@@ -343,12 +343,12 @@ button[mat-icon-button] {
     letter-spacing: normal !important;
   }
   &.merging-enabled {
-    outline: 1px dashed var(--mat-sys-outline);
-    outline-offset: 2px;
+    outline: 2px dotted var(--mat-sys-outline);
+    outline-offset: 1px;
   }
   &.merging-enabled[aria-selected="true"] {
-    outline: 1px dashed var(--mat-sys-secondary);
-    outline-offset: 2px;
+    outline: 2px dotted var(--mat-sys-secondary);
+    outline-offset: 1px;
   }
   &:last-child { 
     margin-bottom: 0 !important;
