@@ -187,7 +187,10 @@ select {
 
 .collapse .collapsed-group {
   display: grid;
-  grid-template-rows: 0fr;
+  // minmax(0, ...) rather than a bare fr value: on mobile Safari a bare `1fr` track falls back
+  // to its minimum content size instead of collapsing to 0, which breaks this on mobile - the
+  // minmax() gives WebKit explicit permission to size the track down to 0.
+  grid-template-rows: minmax(0, 0fr);
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   border-top: 0px solid transparent;
@@ -195,7 +198,7 @@ select {
 }
 
 .collapse.show .collapsed-group {
-  grid-template-rows: 1fr;
+  grid-template-rows: minmax(0, 1fr);
   padding-top: initial;
   padding-bottom: initial;
   //border-top: 1px solid rgba(0,0,0,.15);
