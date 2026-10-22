@@ -659,7 +659,7 @@ body:has(.connected-theme) .mat-mdc-select-panel,
 body:has(.connected-theme) .mat-mdc-autocomplete-panel,
 body:has(.connected-theme) .mat-mdc-menu-panel,
 body:has(.connected-theme) .mat-timepicker-panel,
-body:has(.connected-theme) .ng-dropdown-panel {
+body:has(.connected-theme) .ng-select-panel {
   --bg-core-surface-2-hover: light-dark(
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.1)

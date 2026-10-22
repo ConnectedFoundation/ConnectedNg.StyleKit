@@ -38,7 +38,7 @@ a.mdc-list-item--disabled *{
 // }
 
 .mat-form-field-disabled button,
-.mat-form-field-disabled .ng-arrow-wrapper {
+.mat-form-field-disabled .ng-select-arrow {
   opacity: 0.4;
   pointer-events: none !important;
   cursor: default;
@@ -93,10 +93,10 @@ mat-form-field:has([readonly="true"]) {
   pointer-events: none !important;
   opacity: 0.8 !important;
   }
-  & .ng-select .ng-select-container, 
-  & .ng-select .ng-clear-wrapper, 
-  & .ng-select .ng-arrow-wrapper .ng-arrow, 
-  & .ng-dropdown-panel .ng-dropdown-panel-items .ng-option{
+  & .ng-select .ng-select-control, 
+  & .ng-select .ng-select-clear, 
+  & .ng-select .ng-select-arrow, 
+  & .ng-select-panel .ng-select-option{
   pointer-events: none !important;
   opacity: 0.8 !important;
   }

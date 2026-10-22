@@ -875,31 +875,29 @@ mat-icon {
 /*test input redonly*/
 
 /*mtx-overides*/
-.ng-dropdown-panel{
+.ng-select-panel{
   background-color: var(--mat-sys-surface) !important ;
 }
 
-.ng-select .ng-select-container,
-.ng-select .ng-clear-wrapper,
-.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+.ng-select .ng-select-control,
+.ng-select .ng-select-clear,
+.ng-select-panel .ng-select-option {
   color: var(--mat-sys-on-surface) !important;
 }
 
-.ng-select .ng-clear-wrapper{
+.ng-select .ng-select-clear{
   height: 1.25rem !important;
 }
 
- .ng-select .ng-clear {   
-    font-size: 20px!important;  
-    pointer-events: none;
-    font-weight: 300!important;
-  }
+.ng-select .ng-select-clear svg {
+  pointer-events: none;
+}
 
-.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+.ng-select-panel .ng-select-option {
   font-size: .875em;
 }
 
-.ng-dropdown-panel .ng-optgroup {
+.ng-select-panel .ng-select-optgroup {
   padding: 4px 16px !important;
   font-weight: 400 !important;
   font-size: .75em !important;
@@ -907,11 +905,11 @@ mat-icon {
   
 }
 
-.ng-dropdown-panel .ng-option  {
+.ng-select-panel .ng-select-option  {
   white-space: normal!important;
 }
 
-.ng-select .ng-select-container {
+.ng-select .ng-select-control {
   //align-items: baseline !important;
   gap: .5rem;
   //padding-right: .35rem;
@@ -922,13 +920,10 @@ mat-icon {
   padding: 0 0 0 .35rem!important;
 }
 
-.ng-select .ng-arrow {
-  border-color: var(--mat-sys-on-surface) transparent transparent !important;
+.ng-select .ng-select-arrow {
+  color: var(--mat-sys-on-surface) !important;
 }
-.ng-select.ng-select-opened .ng-arrow {
-  border-color: transparent transparent var(--mat-sys-on-surface) !important;
-}
-.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+.ng-select-panel .ng-select-option.ng-select-option-marked {
   background-color: var(--mat-sys-secondary-container) !important;
   background-color: var(
     --mat-option-hover-state-layer-color,
@@ -941,7 +936,7 @@ mat-icon {
   ) !important;
 }
 
-.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected {
+.ng-select-panel .ng-select-option.ng-select-option-selected {
   background-color: var(--mat-sys-secondary-container) !important;
   background-color: light-dark(
     rgba(0, 0, 0, 0.1),
@@ -955,11 +950,11 @@ mat-icon {
 mat-form-field.read-only,
 mat-form-field:has([readonly]),
 mat-form-field:has([readonly="true"]) {
-  .ng-select .ng-arrow {
+  .ng-select .ng-select-arrow {
   opacity:.8!important;
 
   }
-  .ng-select.ng-select-opened .ng-arrow {
+  .ng-select.ng-select-opened .ng-select-arrow {
     opacity:.8!important;
   }
 }
