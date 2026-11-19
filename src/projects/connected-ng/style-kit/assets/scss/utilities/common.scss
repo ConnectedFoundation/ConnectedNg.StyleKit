@@ -733,6 +733,25 @@ fieldset:only-child {
   pointer-events: none;
   opacity: 0.65;
 }
+
+// Content locked by the claimAuthorization directive (disable mode); the directive makes it inert.
+.claim-locked:not(.mat-mdc-list-item) {
+  opacity: 0.38;
+}
+
+// Locked list items look like Material's disabled list items: dimmed text and icons, not a dimmed item.
+.claim-locked.mat-mdc-list-item {
+  .mdc-list-item__primary-text,
+  .mdc-list-item__secondary-text,
+  .mdc-list-item__overline-text {
+    opacity: var(--mat-list-list-item-disabled-label-text-opacity, 0.3);
+  }
+
+  .mdc-list-item__start,
+  .mdc-list-item__end {
+    opacity: var(--mat-list-list-item-disabled-leading-icon-opacity, 0.38);
+  }
+}
 /*LEGEND CONTENT*/
 .legend-content {
   width: max-content;
